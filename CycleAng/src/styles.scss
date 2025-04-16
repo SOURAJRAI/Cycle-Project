@@ -1,0 +1,19 @@
+@use '../src/assets/scss/variables.scss' ;
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: variables.$font-family;
+  background: variables.$background-color;
+  overflow: hidden;
+}
+
+.toast-progress {
+  background-color: rgb(255, 255, 255) !important;
+}
+.toast-top-right{
+  top: 70px !important;
+  right: 20px !important;
+}

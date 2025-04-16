@@ -1,0 +1,111 @@
+<div class="dashboard-container">
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="card">
+        <h4>Total Orders</h4>
+        <p>1,250</p>
+      </div>
+      <div class="card">
+        <h4>Total Revenue</h4>
+        <p>$85,000</p>
+      </div>
+      <div class="card">
+        <h4>Pending Deliveries</h4>
+        <p>23</p>
+      </div>
+      <div class="card">
+        <h4>New Customers</h4>
+        <p>310</p>
+      </div>
+    </div>
+  
+    <!-- Charts Row -->
+    <div class="charts-row">
+        <div class="chart-card">
+          <h5 class="chart-title">Sales Overview</h5>
+        <canvas baseChart
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="'line'">
+        </canvas>
+      </div>
+  
+      <div class="chart-card">
+        <h5 class="chart-title">Orders Overview</h5>
+        <canvas baseChart
+        [data]="pieChartData"
+        [options]="pieChartOptions"
+        [type]="'doughnut'">
+      </canvas>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+<div class="bottom-section">
+  <div class="row-sections">
+    
+    <!-- Recent Orders -->
+    <!-- Recent Orders -->
+<!-- Recent Orders -->
+<div class="bottom-card">
+  <h5 class="bottom-title">Recent Orders</h5>
+
+  <div class="order-item">
+    <div class="order-left">
+      <img src="https://www.jagranimages.com/images/newimg/29032023/29_03_2023-gear_cycle_under_10000_23370497.jpg" alt="Roadster X100" class="order-image" />
+      <div class="order-details">
+        <strong>Roadster X100</strong>
+        <p class="order-meta">Order ID: #1245 • 2h ago</p>
+      </div>
+    </div>
+    <div class="order-amount">$450</div>
+  </div>
+
+  <div class="order-item">
+    <div class="order-left">
+      <img src="https://www.jagranimages.com/images/newimg/29032023/29_03_2023-gear_cycle_under_10000_23370497.jpg" alt="Mountain Beast 3000" class="order-image" />
+      <div class="order-details">
+        <strong>Mountain Beast 3000</strong>
+        <p class="order-meta">Order ID: #1246 • 4h ago</p>
+      </div>
+    </div>
+    <div class="order-amount">$870</div>
+  </div>
+
+  <div class="order-item">
+    <div class="order-left">
+      <img src="https://www.jagranimages.com/images/newimg/29032023/29_03_2023-gear_cycle_under_10000_23370497.jpg" alt="Urban Cruiser" class="order-image" />
+      <div class="order-details">
+        <strong>Urban Cruiser</strong>
+        <p class="order-meta">Order ID: #1247 • 6h ago</p>
+      </div>
+    </div>
+    <div class="order-amount">$560</div>
+  </div>
+
+</div>
+
+
+<!-- Inventory Status -->
+<div class="bottom-card">
+  <h5 class="bottom-title">Inventory Status</h5>
+  <div class="inventory-list">
+    <div class="inventory-item">
+      🚲 <strong>Mountain Bike</strong>
+      <span class="badge low">5 left</span>
+    </div>
+    <div class="inventory-item">
+      🚲 <strong>Road Bike</strong>
+      <span class="badge good">20 left</span>
+    </div>
+   
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+  </div>
+  

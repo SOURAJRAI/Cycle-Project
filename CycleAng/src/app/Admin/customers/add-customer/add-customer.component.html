@@ -1,0 +1,60 @@
+
+
+
+    <div class="popup-overlay" (click)="cancel()">
+        <div class="popup-container"  (click)="$event.stopPropagation()">
+            <h2 class="popup-title">Add New Customer</h2>
+  
+            <form [formGroup]="customerForm" (ngSubmit)="submitForm()" class="popup-form">
+                <div class="form-field">
+                    <label>First Name</label>
+                    <input type="text" formControlName="firstName" placeholder="Enter first name">
+                    <div class="error" *ngIf="customerForm.get('firstName')?.touched && customerForm.get('firstName')?.invalid">
+                        <small *ngIf="customerForm.get('firstName')?.errors?.['required']">First name is required.</small>
+                        <small *ngIf="customerForm.get('firstName')?.errors?.['pattern']">Only letters are allowed.</small>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label>Last Name</label>
+                    <input type="text" formControlName="lastName" placeholder="Enter last name">
+                    <div class="error" *ngIf="customerForm.get('lastName')?.touched && customerForm.get('lastName')?.invalid">
+                        <small *ngIf="customerForm.get('lastName')?.errors?.['required']">Last name is required.</small>
+                        <small *ngIf="customerForm.get('lastName')?.errors?.['pattern']">Only letters are allowed.</small>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label>Email</label>
+                    <input type="email" formControlName="email" placeholder="Enter email">
+                    <div class="error" *ngIf="customerForm.get('email')?.touched && customerForm.get('email')?.invalid">
+                        <small *ngIf="customerForm.get('email')?.errors?.['required']">Email is required.</small>
+                        <small *ngIf="customerForm.get('email')?.errors?.['email']">Invalid email address.</small>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label>Phone Number</label>
+                    <input type="text" formControlName="phoneNumber" placeholder="Enter phone number" maxlength="10">
+                    <div class="error" *ngIf="customerForm.get('phoneNumber')?.touched && customerForm.get('phoneNumber')?.invalid">
+                        <small *ngIf="customerForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                        <small *ngIf="customerForm.get('phoneNumber')?.errors?.['pattern']">Phone number must be exactly 10 digits.</small>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label>Address</label>
+                    <textarea formControlName="address" rows="3" placeholder="Enter address"></textarea>
+                    <div class="error" *ngIf="customerForm.get('address')?.touched && customerForm.get('address')?.invalid">
+                        <small>Address is required.</small>
+                    </div>
+                </div>
+                
+                <div class="popup-buttons">
+                    <button type="submit" class="btn-save" >Save</button>
+                    <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    

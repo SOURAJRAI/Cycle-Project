@@ -1,0 +1,144 @@
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn-add {
+    background: linear-gradient(to right, #6c63ff, #5a54d1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+  
+    &:hover {
+    background: #6c63ff;
+    color: white;
+  }
+}
+  
+  .filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #6c63ff;
+    background: transparent;
+    color: #6c63ff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-buttons button:hover,
+  .filter-buttons button.active {
+    background: #6c63ff;
+    color: #ffffff;
+  }
+  
+  .orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .order-card {
+    background: linear-gradient(135deg,#f8f8f8  , #ffffff );    
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  .order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .badge.pending {
+    background: #e0f0ff;
+    color: #2196F3;
+  }
+  
+  .badge.shipped {
+    background: #fff5e6;
+    color: #FF9800;
+  }
+  
+  .badge.delivered {
+    background: #e6ffe6;
+    color: #4CAF50;
+  }
+  
+  .badge.cancelled {
+    background: #ffe6e6;
+    color: #F44336;
+  }
+  
+  .order-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 12px;
+   
+   
+  }
+  
+  .view-btn {
+    color: #5a8dee; // soft blue
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+   
+    transition: color 0.3s;
+
+  }
+
+  .edit-btn {
+    color: #954fe6; // your main purple
+
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+   
+    transition: color 0.3s;
+  }
+
+  .delete-btn  {
+    color: #ff6b6b; // soft red
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+   
+    transition: color 0.3s;
+  }
+  

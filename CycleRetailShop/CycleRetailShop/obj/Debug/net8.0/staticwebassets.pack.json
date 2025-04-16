@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
+      "PackagePath": "staticwebassets\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
+      "PackagePath": "staticwebassets\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
+      "PackagePath": "staticwebassets\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
+      "PackagePath": "staticwebassets\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CycleRetailShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CycleRetailShop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CycleRetailShop.props",
+      "PackagePath": "build\\CycleRetailShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CycleRetailShop.props",
+      "PackagePath": "buildMultiTargeting\\CycleRetailShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CycleRetailShop.props",
+      "PackagePath": "buildTransitive\\CycleRetailShop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

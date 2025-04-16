@@ -1,0 +1,399 @@
+<div class="inventory-container">
+  <div
+    class="summary-container"
+    *ngIf="!isLoading && filteredCycles.length > 0"
+  >
+    <div class="summary-cards">
+      <div class="summary-card total">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-bicycle"></i>
+          </div>
+          <div class="card-text">
+            <h3>Total Cycles</h3>
+            <p>{{ cycles.length }} models</p>
+            <div class="card-footer">Across all categories</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card available">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="card-text">
+            <h3>Available</h3>
+            <p>{{ getAvailableCount() }} in stock</p>
+            <div class="card-footer">Ready to sell</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card low-stock">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="card-text">
+            <h3>Low Stock</h3>
+            <p>{{ getLowStockCount() }} items</p>
+            <div class="card-footer">Needs restocking</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card out-of-stock">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div class="card-text">
+            <h3>Out of Stock</h3>
+            <p>{{ getOutOfStockCount() }} items</p>
+            <div class="card-footer">Currently unavailable</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card value">
+        <div class="card-content">
+          <div class="card-icon">
+            <i class="fas fa-rupee-sign"></i>
+          </div>
+          <div class="card-text">
+            <h3>Inventory Value</h3>
+            <p>₹{{ getTotalInventoryValue() | number }}</p>
+            <div class="card-footer">Total worth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header and Controls -->
+  <div class="inventory-header">
+    <div class="controls">
+      <div class="search-filter">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            placeholder="Search cycles..."
+            [(ngModel)]="searchQuery"
+            (input)="applyFilters()"
+          />
+        </div>
+        <div class="filter-dropdown">
+          <select [(ngModel)]="selectedType" (change)="applyFilters()">
+            <option value="all">All Types</option>
+            <option *ngFor="let type of getUniqueTypes()" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="view-actions">
+        <button
+          class="view-toggle"
+          (click)="viewMode = 'card'"
+          [class.active]="viewMode === 'card'"
+        >
+          <i class="fas fa-th-large"></i> Card View
+        </button>
+        <button
+          class="view-toggle"
+          (click)="viewMode = 'table'"
+          [class.active]="viewMode === 'table'"
+        >
+          <i class="fas fa-table"></i> Table View
+        </button>
+        <button class="add-btn" (click)="openAddForm()">
+          <i class="fas fa-plus"></i> Add Cycle
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Loading inventory...</p>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="!isLoading && filteredCycles.length === 0">
+    <i class="fas fa-bicycle"></i>
+    <h3>No Cycles Found</h3>
+    <p>Try adjusting your search or add a new cycle</p>
+    <button class="add-btn" (click)="openAddForm()">
+      <i class="fas fa-plus"></i> Add New Cycle
+    </button>
+  </div>
+
+  <!-- Card View -->
+  <div
+    class="card-view"
+    *ngIf="!isLoading && filteredCycles.length > 0 && viewMode === 'card'"
+  >
+    <div class="cycle-card" *ngFor="let cycle of paginatedCycles">
+      <div class="card-badge" [ngClass]="getStockClass(cycle.stockQuantity)">
+        <i
+          class="fas status-icon"
+          [ngClass]="{
+            'fa-check-circle': cycle.stockQuantity > 10,
+            ' fa-exclamation-triangle':
+              cycle.stockQuantity > 0 && cycle.stockQuantity <= 10,
+            ' fa-ban': cycle.stockQuantity === 0
+          }"
+        ></i>
+        {{ getStockStatus(cycle.stockQuantity) }}
+      </div>
+
+      <div class="cycle-image">
+     
+        <img
+          [src]="cycle.imageUrl ? 'https://localhost:7028' + cycle.imageUrl :
+           'assets/images/4.png'"
+          [alt]="cycle.brand + ' ' + cycle.modelName"
+        />
+      </div>
+
+      <div class="cycle-info">
+        <div class="brand">{{ cycle.brand }}</div>
+        <h3 class="model">{{ cycle.modelName }}</h3>
+        <div class="type">{{ cycle.type }}</div>
+
+        <div class="cycle-specs">
+          <div class="spec">
+            <i class="fas fa-tag"></i>
+            <span>ID: {{ cycle.cycleID }}</span>
+          </div>
+          <div class="spec">
+            <i class="fas fa-boxes"></i>
+            <span>Stock: {{ cycle.stockQuantity }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cycle-footer">
+        <div class="price">₹{{ cycle.price | number : "1.2-2" }}</div>
+        <div class="actions">
+          <button class="action-btn edit" (click)="openEditForm(cycle)">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button
+            class="action-btn delete"
+            (click)="deleteCycle(cycle.cycleID)"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" *ngIf="filteredCycles.length > itemsPerPage">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        *ngFor="let page of pages"
+        (click)="goToPage(page)"
+        [class.active]="page === currentPage"
+      >
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Table View remains the same -->
+
+  <!-- Table View -->
+
+    <div
+      class="table-container"
+      *ngIf="!isLoading && filteredCycles.length > 0 && viewMode === 'table'"
+    >
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cycle of paginatedCycles">
+            <td>{{ cycle.cycleID }}</td>
+            <td class="image-cell">
+              <img
+                [src]="
+                  cycle.imageUrl
+                    ? 'https://localhost:7028' + cycle.imageUrl
+                    : 'assets/default-cycle.jpg'
+                "
+                [alt]="cycle.brand"
+              />
+            </td>
+            <td>{{ cycle.brand }}</td>
+            <td>{{ cycle.modelName }}</td>
+            <td>{{ cycle.type }}</td>
+            <td>₹{{ cycle.price | number : "1.2-2" }}</td>
+            <td>{{ cycle.stockQuantity }}</td>
+            <td>
+              <span
+                class="status-badge"
+                [ngClass]="getStockClass(cycle.stockQuantity)"
+              >
+                {{ getStockStatus(cycle.stockQuantity) }}
+              </span>
+            </td>
+            <td class="actions-cell">
+              <button class="table-btn edit" (click)="openEditForm(cycle)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button
+                class="table-btn delete"
+                (click)="deleteCycle(cycle.cycleID)"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="pagination" *ngIf="filteredCycles.length > itemsPerPage">
+        <button (click)="prevPage()" [disabled]="currentPage === 1">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+        *ngFor="let page of pages"
+        (click)="goToPage(page)"
+        [class.active]="page === currentPage"
+        >
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+    
+
+
+  <!-- Add/Edit Form -->
+  <div class="form-overlay" *ngIf="showForm">
+    <div class="form-container">
+      <div class="form-header">
+        <h3>{{ isEditMode ? 'Edit Cycle' : 'Add New Cycle' }}</h3>
+        <button class="close-btn" (click)="showForm = false">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <form [formGroup]="cycleForm" (ngSubmit)="saveCycle()">
+        <div class="form-grid">
+          <!-- Left Column -->
+          <div class="form-column">
+            <div class="form-group">
+              <label>Brand</label>
+              <input type="text" formControlName="brand" placeholder="Enter brand name">
+              <div class="error-message" *ngIf="cycleForm.get('brand')?.invalid && cycleForm.get('brand')?.touched">
+                Brand is required
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Model Name</label>
+              <input type="text" formControlName="modelName" placeholder="Enter model name">
+              <div class="error-message" *ngIf="cycleForm.get('modelName')?.invalid && cycleForm.get('modelName')?.touched">
+                Model name is required
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Type</label>
+              <input type="text" formControlName="type" placeholder="Enter cycle type">
+              <div class="error-message" *ngIf="cycleForm.get('type')?.invalid && cycleForm.get('type')?.touched">
+                Type is required
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Column -->
+          <div class="form-column">
+            <div class="form-group">
+              <label>Price (₹)</label>
+              <input type="number" formControlName="price" min="0" step="0.01" placeholder="0.00">
+              <div class="error-message" *ngIf="cycleForm.get('price')?.invalid && cycleForm.get('price')?.touched">
+                Valid price is required
+              </div>
+              <div class="error-message" *ngIf="cycleForm.get('price')?.hasError('min')">
+                Price Should be Greater than 0
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Stock Quantity</label>
+              <input type="number" formControlName="stockQuantity" min="0" placeholder="0">
+              <div class="error-message" *ngIf="cycleForm.get('stockQuantity')?.invalid && cycleForm.get('stockQuantity')?.touched">
+                Valid quantity is required
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Warranty Period</label>
+              <input type="text" formControlName="warrantyPeriod" placeholder="e.g., 1 year">
+            </div>
+          </div>
+          
+          <!-- Full Width Fields -->
+          <div class="form-group full-width">
+            <label>Description</label>
+            <textarea formControlName="description" rows="3" placeholder="Enter cycle description"></textarea>
+          </div>
+          
+          <!-- Image Upload -->
+          <div class="form-group full-width image-upload">
+            <label>Cycle Image</label>
+            <div class="upload-container">
+              <div class="preview-container" *ngIf="imagePreview">
+                <img [src]="imagePreview" class="image-preview">
+                <button type="button" class="remove-image" (click)="removeImage()">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="upload-area" [class.has-image]="imagePreview">
+                <input type="file" id="cycleImage" accept="image/*" (change)="onFileSelected($event)" hidden>
+                <label for="cycleImage" class="upload-btn">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>{{ imagePreview ? 'Change Image' : 'Upload Image' }}</span>
+                </label>
+                <div class="hint">JPEG or PNG, max 5MB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="cancel-btn" (click)="showForm = false">Cancel</button>
+          <button type="submit" class="save-btn" >
+            {{ isEditMode ? 'Update Cycle' : 'Add Cycle' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</div>

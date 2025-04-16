@@ -1,0 +1,12 @@
+.main-layout {
+  display: flex;
+}
+
+.content {
+  margin-left: 220px;
+  margin-top: 70px;
+  padding: 20px;
+
+  width: calc(100% - 220px);
+}
+

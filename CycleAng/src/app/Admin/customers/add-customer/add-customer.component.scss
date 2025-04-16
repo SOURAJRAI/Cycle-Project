@@ -1,0 +1,117 @@
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); // slight dark overlay
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-container {
+    background: #ffffff;
+    width: 400px;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: popup-slide 0.4s ease;
+  }
+  
+  @keyframes popup-slide {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .popup-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4f46e5; // soft purple
+    text-align: center;
+  }
+  
+  .popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+    }
+  
+    input, textarea {
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      outline: none;
+  
+      &:focus {
+    
+        box-shadow: 0 0 5px #6c63ff;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+      }
+    }
+  }
+  
+  .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  
+    .btn-save {
+      background-color: #4f46e5;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  
+      &:hover {
+        background-color: #4338ca;
+      }
+    }
+  
+    .btn-cancel {
+      background-color: #e5e7eb;
+      color: #374151;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  
+      &:hover {
+        background-color: #d1d5db;
+      }
+    }
+  }
+  
+  .error{
+    color : #e74c3c;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: 2px;
+  }

@@ -1,0 +1,71 @@
+
+
+
+<div class="popup-overlay" (click)="cancel()">
+    <div class="popup-container"  (click)="$event.stopPropagation()">
+        <h2 class="popup-title">Add New Employee</h2>
+
+        <form [formGroup]="employeeForm" (ngSubmit)="submitForm()" class="popup-form">
+            <div class="form-field">
+                <label>User Name</label>
+                <input type="text" formControlName="userName" placeholder="Enter first name">
+                <div class="error" *ngIf="employeeForm.get('firstName')?.touched && employeeForm.get('firstName')?.invalid">
+                    <small *ngIf="employeeForm.get('firstName')?.errors?.['required']">User Name is required.</small>
+                    <small *ngIf="employeeForm.get('firstName')?.errors?.['pattern']">Only letters are allowed.</small>
+                </div>
+            </div>
+            
+            <div class="form-field">
+                <label>Password</label>
+                <input type="text" formControlName="passwordHash" placeholder="Enter password">
+                <div class="error" *ngIf="employeeForm.get('passwordHash')?.touched && employeeForm.get('passwordHash')?.invalid">
+                    <small *ngIf="employeeForm.get('passwordHash')?.errors?.['required']">Last name is required.</small>
+                    <small *ngIf="employeeForm.get('passwordHash')?.errors?.['pattern']">Only letters are allowed.</small>
+                </div>
+            </div>
+            
+            <div class="form-field">
+                <label>Email</label>
+                <input type="email" formControlName="email" placeholder="Enter email">
+                <div class="error" *ngIf="employeeForm.get('email')?.touched && employeeForm.get('email')?.invalid">
+                    <small *ngIf="employeeForm.get('email')?.errors?.['required']">Email is required.</small>
+                    <small *ngIf="employeeForm.get('email')?.errors?.['email']">Invalid email address.</small>
+                </div>
+            </div>
+            
+            <div class="form-field">
+                <label>Phone Number</label>
+                <input type="text" formControlName="phoneNo" placeholder="Enter phone number" maxlength="10">
+                <div class="error" *ngIf="employeeForm.get('phoneNumber')?.touched && employeeForm.get('phoneNo')?.invalid">
+                    <small *ngIf="employeeForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                    <small *ngIf="employeeForm.get('phoneNumber')?.errors?.['pattern']">Phone number must be exactly 10 digits.</small>
+                </div>
+            </div>
+            
+            <div class="form-field">
+                <label>Role</label>
+                <div class="role-options">
+                  <label>
+                    <input type="radio" formControlName="role" value="Admin">
+                    Admin
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="role" value="Employee" checked>
+                    Employee
+                  </label>
+                </div>
+                <div class="error" *ngIf="employeeForm.get('role')?.touched && employeeForm.get('role')?.invalid">
+                  <small *ngIf="employeeForm.get('role')?.errors?.['required']">Role is required.</small>
+                </div>
+              </div>
+              
+            
+            
+            <div class="popup-buttons">
+                <button type="submit" class="btn-save" >Save</button>
+                <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+

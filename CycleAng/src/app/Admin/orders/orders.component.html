@@ -1,0 +1,51 @@
+<div class="orders-header">
+    <input type="text" placeholder="Search orders..." class="search-bar">
+    <button class="btn-add"><i class="fa fa-plus"></i> Add Order</button>
+  </div>
+  
+  <div class="filter-buttons">
+    <button class="active">All</button>
+    <button>Pending</button>
+    <button>Shipped</button>
+    <button>Delivered</button>
+    <button>Cancelled</button>
+  </div>
+  
+  <div class="orders-grid">
+    <div class="order-card">
+      <div class="order-top">
+        <h4>#ORD1234</h4>
+        <span class="badge pending">Pending</span>
+      </div>
+      <div class="order-info">
+        <p><i class="fa fa-user"></i> John Doe</p>
+        <p><i class="fa fa-shopping-cart"></i> 3 items</p>
+        <p><i class="fa fa-calendar"></i> 09 Apr 2025</p>
+        <p><i class="fa fa-rupee-sign"></i> 4500</p>
+      </div>
+      <div class="order-actions">
+        <button class="view-btn"><i class="fa fa-eye"></i></button>
+        <button class="edit-btn"><i class="fa fa-pen"></i></button>
+        <button class="delete-btn"><i class="fa fa-trash"></i></button>
+      </div>
+    </div>
+  
+    <div class="order-card">
+      <div class="order-top">
+        <h4>#ORD1235</h4>
+        <span class="badge delivered">Delivered</span>
+      </div>
+      <div class="order-info">
+        <p><i class="fa fa-user"></i> Jane Smith</p>
+        <p><i class="fa fa-shopping-cart"></i> 5 items</p>
+        <p><i class="fa fa-calendar"></i> 08 Apr 2025</p>
+        <p> {{ 6700 | currency:'INR'}} </p>
+      </div>
+      <div class="order-actions">
+        <button class="view-btn fa fa-eye"></button>
+        <button class="edit-btn fa fa-pen"></button>
+        <button class="delete-btn fa fa-trash"></button>
+      </div>
+    </div>
+  </div>
+  
