@@ -3,6 +3,7 @@ import { UserServiceService } from '../../Service/user-service.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from "./add-employee/add-employee.component";
+import { start } from 'repl';
 
 @Component({
   selector: 'app-employee',
@@ -27,8 +28,10 @@ export class EmployeeComponent {
       this.allEmployees = datas;
       this.employees = this.allEmployees.filter(user => user.role === 'Employee');
       this.filteredEmployess = this.employees;
-      console.log(this.allEmployees);
-      console.log(this.employees);
+      console.log("all employees",this.allEmployees);
+      console.log("employee only",this.employees);
+      console.log("Filtered Employess",this.filteredEmployess);
+      console.log("paginated employees",this.paginatedCycles);
     },
     error:(error) => {
       console.error('Error fetching employee data:', error);
@@ -110,6 +113,7 @@ export class EmployeeComponent {
     this.userService.deleteEmployee(employeeID).subscribe({
       next: (response) => {
         console.log('Employee deleted successfully:', response);
+        this.prevPage();
         this.getEmployees(); // Refresh the employee list after deletion
       },
       error: (error) => {
@@ -155,6 +159,64 @@ export class EmployeeComponent {
     const initials = nameParts.map(part => part.charAt(0).toUpperCase()).join('');
     return initials;
   }
+
+ 
+  itemsPerPage: number = 4;
+  currentPage: number = 1;
+
+  get paginatedCycles(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    console.log(startIndex+this.itemsPerPage);
+    console.log(this.filteredEmployess.length);
+    return this.filteredEmployess.slice(
+      startIndex,
+      startIndex + this.itemsPerPage
+    );
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredEmployess.length / this.itemsPerPage);
+  }
+
+  get pages(): number[] {
+    const pages = [];
+    const maxVisiblePages = 5;
+
+    if (this.totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= this.totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      let startPage = Math.max(1, this.currentPage - 2);
+      let endPage = Math.min(this.totalPages, startPage + maxVisiblePages - 1);
+
+      if (endPage - startPage < maxVisiblePages - 1) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        pages.push(i);
+      }
+    }
+
+    return pages;
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  goToPage(page: number): void {
+    this.currentPage = page;
+  } 
 
 
 

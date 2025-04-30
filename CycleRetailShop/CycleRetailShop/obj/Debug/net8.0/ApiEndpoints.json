@@ -304,6 +304,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CycleRetailShop.Controllers.CycleController",
+    "Method": "UpdateCycleStock",
+    "RelativePath": "api/Cycle/UpdateStock/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cyclestockdto",
+        "Type": "CycleRetailShop.DTO.CycleDto.CycleStockUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CycleRetailShop.Controllers.OrderController",
     "Method": "GetAllOrders",
     "RelativePath": "api/Order",
@@ -407,6 +428,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CycleRetailShop.Controllers.OrderController",
+    "Method": "AddOrderDetails",
+    "RelativePath": "api/Order/AddOrderDetails",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderDto",
+        "Type": "CycleRetailShop.DTO.OrderDto.OrderFullDto",
         "IsRequired": true
       }
     ],

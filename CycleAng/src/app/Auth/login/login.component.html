@@ -1,0 +1,51 @@
+<div class="container ">
+    <div class="row vh-100 align-items-center">
+        <div class="col-xxl-6 offset-xxl-3 col-lg-6 offset-md-3 col-10">
+            <div class="row rounded-4 border-0 shadow-lg bg-white" style="min-height: 450px;">
+                <div class="col-md-5 d-md-flex d-none bg-primary  rounded-start-4 align-items-center jusitfy-content-center">
+                    <div class="text-center text-white">
+                        <img src="assets/scss/images/authec-logo.png" class="w-50 mb-3">
+                        <h2 class="fw-bolder"></h2>
+                    </div>
+                </div>
+                <div class="col-md-7 col-12 d-flex jusitfy-content-start align-items-center">
+                    <div class="p-5 w-100" >
+
+<div class="mb-4 ">
+    <h2 class="text-dark">
+        Sign In
+    </h2>
+   
+</div>
+<form [formGroup]="form" (ngSubmit)="login()">
+
+    <div class="mb-3">
+        <input class="form-control bg-body-secondary" placeholder="Username" formControlName="userName">
+        <div class="error-feedback"
+            *ngIf="hasDislayableError('userName') && form.controls['userName'].hasError('required') ">
+            Please Enter Your Username
+        </div>
+    </div>
+    <div class="mb-3">
+        <input class="form-control bg-body-secondary" placeholder="Password" formControlName="password">
+        <div class="error-feedback"
+            *ngIf="hasDislayableError('password') && form.controls['password'].hasError('required')">
+            Please Enter Your Password
+        </div>
+    </div>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-success opacity-75 w-100 rounded-3">
+            Sign in
+        </button>
+    </div>
+
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+

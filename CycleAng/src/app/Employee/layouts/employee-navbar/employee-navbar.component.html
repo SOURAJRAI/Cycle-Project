@@ -1,0 +1,48 @@
+
+
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a routerLink="/dashboard" class="logo-link">
+        <i class="fas fa-bicycle logo-icon"></i>
+        <span class="logo-text">Cycle</span>
+      </a>
+      <button class="navbar-toggle" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <div class="navbar-links" [class.active]="isMenuOpen">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="/employee/employeedashboard" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/employee/employeeorders" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Orders</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/employee/employeepayments" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-credit-card"></i>
+            <span>Payments</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/employee/employeecustomers" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-user"></i>
+            <span>Customers</span>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="user-profile">
+        <img src="assets/images/user-avatar.png" alt="User" class="user-avatar">
+        <span class="user-name">Employee</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </nav>

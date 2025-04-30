@@ -1,8 +1,8 @@
 
 
-
-    <div class="popup-overlay" (click)="cancel()">
-        <div class="popup-container"  (click)="$event.stopPropagation()">
+<div class="popup-modal" >
+    <div class="popup-overlay" (click)="cancel()"></div>
+        <div class="popup-container" >
             <h2 class="popup-title">Add New Customer</h2>
   
             <form [formGroup]="customerForm" (ngSubmit)="submitForm()" class="popup-form">
@@ -56,5 +56,5 @@
                 </div>
             </form>
         </div>
-    </div>
     
+</div> 

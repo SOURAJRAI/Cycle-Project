@@ -12,7 +12,7 @@
   </div>
   
   <div class="employee-grid">
-    <div class="employee-card" *ngFor="let employee of filteredEmployess">
+    <div class="employee-card" *ngFor="let employee of paginatedCycles">
       <div class="avatar">{{getIntials(employee.userName)}}</div>
       <div class="employee-info">
         <h4> {{employee.userName}} </h4>
@@ -32,7 +32,22 @@
       </div>
     </div>
 
-  
+     <!-- Pagination -->
+     <div class="pagination" *ngIf="filteredEmployess.length > itemsPerPage">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        *ngFor="let page of pages"
+        (click)="goToPage(page)"
+        [class.active]="page === currentPage"
+      >
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
     <!-- More cards... -->
   </div>
 

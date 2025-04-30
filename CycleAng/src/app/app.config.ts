@@ -8,8 +8,9 @@ import {FaIconLibrary} from '@fortawesome/angular-fontawesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimations, provideNoopAnimations } from '@angular/platform-browser/animations';
 import { provideToastr, ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -29,6 +30,8 @@ export const appConfig: ApplicationConfig = {
           progressAnimation:'decreasing'
         },
     ),
+    
+    
 
   ],
   

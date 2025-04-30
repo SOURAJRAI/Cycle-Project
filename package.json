@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@fortawesome/angular-fontawesome": "^1.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "chart.js": "^4.4.9",
+    "jwt-decode": "^4.0.0",
+    "ng2-charts": "^8.0.0",
+    "ngx-timeago": "^3.0.0"
+  }
+}

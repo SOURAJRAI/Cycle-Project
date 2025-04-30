@@ -22,12 +22,20 @@ namespace CycleRetailShop.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] LoginRequest request)
         {
+            try
+            {
             var token=await _authService.Login(request.UserName, request.Password);
             if (token == null)
             {
                 return Unauthorized(new { message = "Invalid credentials" });
             }
             return Ok(new { Token = token });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
         }
     }
     public class LoginRequest

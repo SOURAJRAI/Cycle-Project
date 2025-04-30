@@ -1,20 +1,68 @@
 {
   "Files": [
     {
-      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
       "PackagePath": "staticwebassets\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png"
     },
     {
-      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png",
+      "PackagePath": "staticwebassets\\images\\2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
       "PackagePath": "staticwebassets\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png"
     },
     {
-      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png",
+      "PackagePath": "staticwebassets\\images\\46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png",
+      "PackagePath": "staticwebassets\\images\\67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\6e171cfc-d25b-4303-b025-a24279e171d7_4.png",
+      "PackagePath": "staticwebassets\\images\\6e171cfc-d25b-4303-b025-a24279e171d7_4.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\734929f1-a70d-4d2d-939e-8338c137be96_4.png",
+      "PackagePath": "staticwebassets\\images\\734929f1-a70d-4d2d-939e-8338c137be96_4.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\795b131e-05fb-459c-a30f-568000ba822f_4.png",
+      "PackagePath": "staticwebassets\\images\\795b131e-05fb-459c-a30f-568000ba822f_4.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png",
+      "PackagePath": "staticwebassets\\images\\7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png",
+      "PackagePath": "staticwebassets\\images\\b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg",
+      "PackagePath": "staticwebassets\\images\\c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
       "PackagePath": "staticwebassets\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg"
     },
     {
-      "Id": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png",
+      "PackagePath": "staticwebassets\\images\\cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
       "PackagePath": "staticwebassets\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png",
+      "PackagePath": "staticwebassets\\images\\e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png"
+    },
+    {
+      "Id": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg",
+      "PackagePath": "staticwebassets\\images\\f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CycleRetailShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

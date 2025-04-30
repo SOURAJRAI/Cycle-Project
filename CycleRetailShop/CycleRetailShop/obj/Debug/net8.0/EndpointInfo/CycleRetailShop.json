@@ -431,37 +431,27 @@
           {
             "name": "Brand",
             "in": "query",
-            "required": true,
             "schema": {
-              "maxLength": 100,
-              "minLength": 0,
               "type": "string"
             }
           },
           {
             "name": "Type",
             "in": "query",
-            "required": true,
             "schema": {
-              "maxLength": 50,
-              "minLength": 0,
               "type": "string"
             }
           },
           {
             "name": "ModelName",
             "in": "query",
-            "required": true,
             "schema": {
-              "maxLength": 100,
-              "minLength": 0,
               "type": "string"
             }
           },
           {
             "name": "Price",
             "in": "query",
-            "required": true,
             "schema": {
               "type": "number",
               "format": "double"
@@ -470,7 +460,6 @@
           {
             "name": "StockQuantity",
             "in": "query",
-            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -479,10 +468,7 @@
           {
             "name": "description",
             "in": "query",
-            "required": true,
             "schema": {
-              "maxLength": 255,
-              "minLength": 0,
               "type": "string"
             }
           },
@@ -490,8 +476,6 @@
             "name": "WarrantyPeriod",
             "in": "query",
             "schema": {
-              "maxLength": 200,
-              "minLength": 0,
               "type": "string"
             }
           }
@@ -537,6 +521,48 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cycle/UpdateStock/{id}": {
+      "put": {
+        "tags": [
+          "Cycle"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CycleStockUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CycleStockUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CycleStockUpdateDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -722,6 +748,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Order/AddOrderDetails": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderFullDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderFullDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderFullDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1501,6 +1558,16 @@
         },
         "additionalProperties": false
       },
+      "CycleStockUpdateDto": {
+        "type": "object",
+        "properties": {
+          "stockQuantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginRequest": {
         "type": "object",
         "properties": {
@@ -1518,8 +1585,7 @@
       "Order": {
         "required": [
           "orderDate",
-          "status",
-          "totalAmount"
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -1567,10 +1633,6 @@
           "status": {
             "type": "string",
             "nullable": true
-          },
-          "totalAmount": {
-            "type": "number",
-            "format": "double"
           },
           "createdBy": {
             "type": "integer",
@@ -1659,16 +1721,37 @@
         },
         "additionalProperties": false
       },
+      "OrderFullDto": {
+        "type": "object",
+        "properties": {
+          "customerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdBy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderDetailCreateDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "OrderUpdateDto": {
         "type": "object",
         "properties": {
           "status": {
             "type": "string",
             "nullable": true
-          },
-          "totalAmount": {
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false

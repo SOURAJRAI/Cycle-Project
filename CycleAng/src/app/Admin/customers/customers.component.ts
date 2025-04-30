@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CustomerService } from '../../Service/customer.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,8 +20,8 @@ export class CustomersComponent {
   inactiveCustomer: any;
   activeCustomer: any;
   customerCount:any;
-  selectedFilter:'all' | 'active' | 'inactive' = 'active';
-
+  selectedFilter:'all' | 'active' | 'inactive' = 'all';
+    viewMode:'grid' | 'list' ='grid';
   constructor(private customerService:CustomerService) { }
 
   ngOnInit() {
@@ -47,7 +47,6 @@ export class CustomersComponent {
   }
 
   customerCountByActive(){
-
     this.activeCustomer=this.allCustomers.filter(customer => customer.status=='1').length;
   }
   customerCountByInactive(){
@@ -155,6 +154,7 @@ export class CustomersComponent {
       next: (response) => {
         customer.status = updatedStatus.status; // Update the status in the local array
         console.log('Customer status updated successfully:', response,customer);
+        this.filterByStatus('all');
         this.getCustomers(); // Refresh the customer list after updating status
         this.customerCountAll();
         this.customerCountByActive();
@@ -178,5 +178,65 @@ export class CustomersComponent {
   }
    
 
+  getRandomColor(): string {
+    const colors = ['#6c63ff', '#28a745', '#dc3545', '#17a2b8', '#ffc107', '#fd7e14', '#e83e8c','#D360F3'];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  }
+
   
+  itemsPerPage: number = 3;
+  currentPage: number = 1;
+
+  get paginatedCycles(): any[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    return this.filteredCustomers.slice(
+      startIndex,
+      startIndex + this.itemsPerPage
+    );
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredCustomers.length / this.itemsPerPage);
+  }
+
+  get pages(): number[] {
+    const pages = [];
+    const maxVisiblePages = 5;
+
+    if (this.totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= this.totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      let startPage = Math.max(1, this.currentPage - 2);
+      let endPage = Math.min(this.totalPages, startPage + maxVisiblePages - 1);
+
+      if (endPage - startPage < maxVisiblePages - 1) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        pages.push(i);
+      }
+    }
+
+    return pages;
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+
+  goToPage(page: number): void {
+    this.currentPage = page;
+  }
 }

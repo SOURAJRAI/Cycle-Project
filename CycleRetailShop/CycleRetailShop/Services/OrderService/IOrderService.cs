@@ -11,5 +11,7 @@ namespace CycleRetailShop.Services.OrderService
         public Task<Order> AddOrder(Order order);
         public Task UpdateOrder(Order order);
         public Task DeleteOrder(int id);
+
+        public Task<Order> getPendingOrderByCustomerId(int customerID);
     }
 }

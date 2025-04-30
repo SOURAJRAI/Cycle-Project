@@ -20,7 +20,7 @@ namespace CycleRetailShop.Models
         [StringLength(50)]
         public string Status { get; set; } = "Pending"; 
 
-        [Required]
+       
         [Column(TypeName = "decimal(10, 2)")]
         public decimal TotalAmount { get; set; } 
 

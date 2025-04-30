@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5hkKKRqLKbi7oC3E+OeF8e2ytc1Gi4L66K1Xo6EU1kg=",
+  "Hash": "Mc027CybgkWMCC47SQ5cLF8CuQ9+o2j4OXaAqaecLwo=",
   "Source": "CycleRetailShop",
   "BasePath": "_content/CycleRetailShop",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CycleRetailShop\\wwwroot",
       "Source": "CycleRetailShop",
-      "ContentRoot": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
       "BasePath": "_content/CycleRetailShop",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
       "SourceId": "CycleRetailShop",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
       "BasePath": "_content/CycleRetailShop",
       "RelativePath": "images/20518272-5960-437b-a2e0-6e63868f3760_4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -38,10 +38,31 @@
       "OriginalItemSpec": "wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png"
     },
     {
-      "Identity": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png",
       "SourceId": "CycleRetailShop",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bzyzfb7bjb",
+      "Integrity": "10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
       "BasePath": "_content/CycleRetailShop",
       "RelativePath": "images/3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -59,10 +80,178 @@
       "OriginalItemSpec": "wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png"
     },
     {
-      "Identity": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png",
       "SourceId": "CycleRetailShop",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bzyzfb7bjb",
+      "Integrity": "10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bzyzfb7bjb",
+      "Integrity": "10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\6e171cfc-d25b-4303-b025-a24279e171d7_4.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/6e171cfc-d25b-4303-b025-a24279e171d7_4#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "43kwil34qw",
+      "Integrity": "sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6e171cfc-d25b-4303-b025-a24279e171d7_4.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\734929f1-a70d-4d2d-939e-8338c137be96_4.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/734929f1-a70d-4d2d-939e-8338c137be96_4#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "43kwil34qw",
+      "Integrity": "sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\734929f1-a70d-4d2d-939e-8338c137be96_4.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\795b131e-05fb-459c-a30f-568000ba822f_4.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/795b131e-05fb-459c-a30f-568000ba822f_4#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "43kwil34qw",
+      "Integrity": "sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\795b131e-05fb-459c-a30f-568000ba822f_4.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bzyzfb7bjb",
+      "Integrity": "10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bzyzfb7bjb",
+      "Integrity": "10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1)#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h01rnyfth0",
+      "Integrity": "4axaXCeplkkewPBq4QqHB3b3qCIE9HFkJIrI4k1qXIs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
       "BasePath": "_content/CycleRetailShop",
       "RelativePath": "images/cb40db24-ab90-4f83-9a26-0db94165de5b_images#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -80,10 +269,31 @@
       "OriginalItemSpec": "wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg"
     },
     {
-      "Identity": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png",
       "SourceId": "CycleRetailShop",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/cb9b7348-c180-4b3a-8483-5d11d3793a3d_4#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "43kwil34qw",
+      "Integrity": "sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
       "BasePath": "_content/CycleRetailShop",
       "RelativePath": "images/d33a401c-d653-44ec-98a4-1ec6ca5256a3_images#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -99,12 +309,54 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/e10f590f-3850-4739-8b7d-fc719e5ad1b4_4#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "43kwil34qw",
+      "Integrity": "sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png"
+    },
+    {
+      "Identity": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg",
+      "SourceId": "CycleRetailShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\",
+      "BasePath": "_content/CycleRetailShop",
+      "RelativePath": "images/f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "msve6wmqeu",
+      "Integrity": "ikFjN50S6gCSu3nPNSihBHec0JLcvz3ML3FpS0x/KbM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg"
     }
   ],
   "Endpoints": [
     {
       "Route": "images/20518272-5960-437b-a2e0-6e63868f3760_4.43kwil34qw.png",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -149,7 +401,7 @@
     },
     {
       "Route": "images/20518272-5960-437b-a2e0-6e63868f3760_4.png",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\20518272-5960-437b-a2e0-6e63868f3760_4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -185,8 +437,90 @@
       ]
     },
     {
+      "Route": "images/2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.bzyzfb7bjb.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:47:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bzyzfb7bjb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\2fcda819-cc99-4f78-b495-24a1ed3565e7_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:47:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
       "Route": "images/3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.bzyzfb7bjb.png",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -231,7 +565,7 @@
     },
     {
       "Route": "images/3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\3db957a5-111f-4b56-844f-0e3e85d8bbb6_ENZO DC.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -267,8 +601,664 @@
       ]
     },
     {
+      "Route": "images/46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.bzyzfb7bjb.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:47:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bzyzfb7bjb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\46c0367a-ea75-4517-b2b1-9e14900114dd_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:47:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.bzyzfb7bjb.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:44:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bzyzfb7bjb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\67e58ede-8575-49d9-be07-c8acaf2468ea_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:44:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/6e171cfc-d25b-4303-b025-a24279e171d7_4.43kwil34qw.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\6e171cfc-d25b-4303-b025-a24279e171d7_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 10:19:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "43kwil34qw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/6e171cfc-d25b-4303-b025-a24279e171d7_4.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/6e171cfc-d25b-4303-b025-a24279e171d7_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\6e171cfc-d25b-4303-b025-a24279e171d7_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 10:19:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/734929f1-a70d-4d2d-939e-8338c137be96_4.43kwil34qw.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\734929f1-a70d-4d2d-939e-8338c137be96_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:43:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "43kwil34qw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/734929f1-a70d-4d2d-939e-8338c137be96_4.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/734929f1-a70d-4d2d-939e-8338c137be96_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\734929f1-a70d-4d2d-939e-8338c137be96_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:43:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/795b131e-05fb-459c-a30f-568000ba822f_4.43kwil34qw.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\795b131e-05fb-459c-a30f-568000ba822f_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:40:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "43kwil34qw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/795b131e-05fb-459c-a30f-568000ba822f_4.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/795b131e-05fb-459c-a30f-568000ba822f_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\795b131e-05fb-459c-a30f-568000ba822f_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:40:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.bzyzfb7bjb.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:51:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bzyzfb7bjb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\7c167be6-145a-4ef7-a3d7-7d73e4ecfa2b_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:51:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.bzyzfb7bjb.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Apr 2025 05:07:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bzyzfb7bjb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\b541e8f3-6cfd-4c84-80e6-82d20d40891c_ENZO DC.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "251338"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Apr 2025 05:07:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10a0k372cgAg231uZ05Cs1OM1ueyHqHFBdWzp5lAQ18="
+        }
+      ]
+    },
+    {
+      "Route": "images/c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).h01rnyfth0.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18632"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4axaXCeplkkewPBq4QqHB3b3qCIE9HFkJIrI4k1qXIs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:59:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h01rnyfth0"
+        },
+        {
+          "Name": "label",
+          "Value": "images/c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4axaXCeplkkewPBq4QqHB3b3qCIE9HFkJIrI4k1qXIs="
+        }
+      ]
+    },
+    {
+      "Route": "images/c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\c2c0af9d-60f6-49c3-a5f5-8893d31b584c_download (1).jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18632"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4axaXCeplkkewPBq4QqHB3b3qCIE9HFkJIrI4k1qXIs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 08:59:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4axaXCeplkkewPBq4QqHB3b3qCIE9HFkJIrI4k1qXIs="
+        }
+      ]
+    },
+    {
       "Route": "images/cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -305,7 +1295,7 @@
     },
     {
       "Route": "images/cb40db24-ab90-4f83-9a26-0db94165de5b_images.v3wjsrb417.jpg",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb40db24-ab90-4f83-9a26-0db94165de5b_images.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -349,8 +1339,90 @@
       ]
     },
     {
+      "Route": "images/cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.43kwil34qw.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:39:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "43kwil34qw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\cb9b7348-c180-4b3a-8483-5d11d3793a3d_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 09:39:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
       "Route": "images/d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -387,7 +1459,7 @@
     },
     {
       "Route": "images/d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.v3wjsrb417.jpg",
-      "AssetFile": "C:\\angular\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\d33a401c-d653-44ec-98a4-1ec6ca5256a3_images.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -427,6 +1499,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-S8EGzZhde7x/VzXZjNNs+h8NTFTjT3tjQx3VTRBnjs8="
+        }
+      ]
+    },
+    {
+      "Route": "images/e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.43kwil34qw.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 10:20:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "43kwil34qw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\e10f590f-3850-4739-8b7d-fc719e5ad1b4_4.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "197597"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 10:20:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sCN0oYGRkkBGAqZUiIRV4aTprUjHWAKCrrlJjAphDb4="
+        }
+      ]
+    },
+    {
+      "Route": "images/f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ikFjN50S6gCSu3nPNSihBHec0JLcvz3ML3FpS0x/KbM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Apr 2025 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ikFjN50S6gCSu3nPNSihBHec0JLcvz3ML3FpS0x/KbM="
+        }
+      ]
+    },
+    {
+      "Route": "images/f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.msve6wmqeu.jpg",
+      "AssetFile": "C:\\angular\\Cycle Project\\Cycle Project\\CycleRetailShop\\CycleRetailShop\\wwwroot\\images\\f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "141111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ikFjN50S6gCSu3nPNSihBHec0JLcvz3ML3FpS0x/KbM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Apr 2025 10:27:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "msve6wmqeu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/f77a104e-b3a2-4ceb-b43b-5e7452d2ffe6_cycle.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ikFjN50S6gCSu3nPNSihBHec0JLcvz3ML3FpS0x/KbM="
         }
       ]
     }

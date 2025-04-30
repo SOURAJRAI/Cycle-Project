@@ -60,6 +60,14 @@ namespace CycleRetailShop.Services.OrderService
 
         }
 
+        public async Task<Order> getPendingOrderByCustomerId(int customerID)
+        {
+            return await _context.Orders.FirstOrDefaultAsync(o => o.CustomerID == customerID && o.Status == "Pending");
+        }
 
+
+
+
+    
     }
 }

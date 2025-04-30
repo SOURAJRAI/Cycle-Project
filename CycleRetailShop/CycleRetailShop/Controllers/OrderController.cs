@@ -1,5 +1,7 @@
-﻿using CycleRetailShop.DTO.OrderDto;
+﻿using System.Linq.Expressions;
+using CycleRetailShop.DTO.OrderDto;
 using CycleRetailShop.Models;
+using CycleRetailShop.Services.OrderDetailService;
 using CycleRetailShop.Services.OrderService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -7,19 +9,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CycleRetailShop.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        private readonly IOrderDetailService _orderDetailService;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService,IOrderDetailService orderDetailService)
         {
             _orderService = orderService;
+            _orderDetailService = orderDetailService;
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetAllOrders()
         {
@@ -35,7 +39,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrderByID(int id)
         {
@@ -51,7 +55,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpPost]
         public async Task<ActionResult<Order>> AddOrder(OrderCreateDto orderDto)
         {
@@ -62,7 +66,6 @@ namespace CycleRetailShop.Controllers
                     CustomerID = orderDto.CustomerID,
                     OrderDate = DateTime.UtcNow,
                     Status = orderDto.Status,
-                    TotalAmount = orderDto.TotalAmount,
                     CreatedBy = orderDto.CreatedBy
                 };
                 var addOrder = await _orderService.AddOrder(order);
@@ -74,7 +77,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateOrder(int id, OrderUpdateDto orderDto)
         {
@@ -90,7 +93,7 @@ namespace CycleRetailShop.Controllers
 
 
                 existOrder.Status = orderDto.Status;
-               
+
                 await _orderService.UpdateOrder(existOrder);
                 return Ok(new { Message = "Orders Updated Successfully" });
             }
@@ -101,7 +104,7 @@ namespace CycleRetailShop.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteOrder(int id)
         {
@@ -121,5 +124,58 @@ namespace CycleRetailShop.Controllers
             }
 
         }
+
+        [HttpPost("AddOrderDetails")]
+        public async Task<ActionResult> AddOrderDetails(OrderFullDto orderDto)
+        {
+            var existingOrder = await _orderService.getPendingOrderByCustomerId(orderDto.CustomerID);
+            Order order;
+
+            if (existingOrder != null)
+            {
+                order = existingOrder;
+            }
+            else
+            {
+
+
+                 order = new Order
+                {
+                    CustomerID = orderDto.CustomerID,
+                    OrderDate = DateTime.UtcNow,
+                    Status = orderDto.Status,
+                    CreatedBy = orderDto.CreatedBy
+                };
+
+                order = await _orderService.AddOrder(order);
+            }
+            decimal total = order.TotalAmount;
+
+            foreach (var item in orderDto.orderDetails)
+            {
+                var detail = new OrderDetail
+                {
+                    OrderID = order.OrderID,
+                    CycleID = item.CycleID,
+                    Quantity = item.Quantity,
+                    UnitPrice =item.UnitPrice,
+                    TotalPrice = item.Quantity * item.UnitPrice,
+
+                };
+                total += detail.TotalPrice;
+                await _orderDetailService.AddOrderDetail(detail);
+            }
+            order.TotalAmount = total;
+            await _orderService.UpdateOrder(order);
+
+            return Ok(new { Message = "Order and Order Details Saved Successfully" });
+
+
+        }
+
+
+        
+
+
     }
 }

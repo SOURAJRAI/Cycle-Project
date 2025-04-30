@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CycleRetailShop.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderDetailsController : ControllerBase
@@ -23,7 +23,7 @@ namespace CycleRetailShop.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<OrderDetail>>> GetAllOrderDetails()
         {
@@ -38,7 +38,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderDetail>> GetOrderDetailByID(int id)
         {
@@ -53,7 +53,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpPost]
         public async Task<ActionResult<OrderDetail>> AddOrderDetail(OrderDetailCreateDto orderDetailDto)
         {
@@ -80,7 +80,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateOrderDetail(int id, OrderDetailsUpdateDto orderDetailDto)
         {
@@ -104,7 +104,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteOrderDetail(int id)
         {

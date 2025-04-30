@@ -134,25 +134,22 @@ namespace CycleRetailShop.Controllers
 
                     imageUrl = "/images/" + uniqueFileName;
                 }
-                else
-                {
-                    return BadRequest(new { Message = "Image file is required" });
-                }
+            
+          
 
 
-                var cycle = new Cycle
-                {
-                    Brand = cycleDto.Brand,
-                    Type = cycleDto.Type,
-                    ModelName = cycleDto.ModelName,
-                    Price = cycleDto.Price,
-                    StockQuantity = cycleDto.StockQuantity,
-                    ImageUrl = imageUrl,
-                    description = cycleDto.description,
-                    UpdatedDate = DateTime.UtcNow,
-                    WarrantyPeriod = cycleDto.WarrantyPeriod
-                };
-                await _cycleService.UpdateCycle(cycle);
+
+                existingcycle.Brand = cycleDto.Brand;
+                existingcycle.Type = cycleDto.Type;
+                existingcycle.ModelName = cycleDto.ModelName;
+                existingcycle.Price = cycleDto.Price;
+                existingcycle.StockQuantity = cycleDto.StockQuantity;
+                existingcycle.ImageUrl = imageUrl;
+                existingcycle.description = cycleDto.description;
+                existingcycle.UpdatedDate = DateTime.UtcNow;
+                existingcycle.WarrantyPeriod = cycleDto.WarrantyPeriod;
+               
+                await _cycleService.UpdateCycle(existingcycle);
                 return Ok(new {Message="Customer Updated Successfully"});
             }
             catch (Exception ex)
@@ -181,6 +178,23 @@ namespace CycleRetailShop.Controllers
             {
                 return BadRequest(new { Message = ex.Message });
             }
+        }
+
+        [HttpPut("UpdateStock/{id}")]
+        public async Task<ActionResult>  UpdateCycleStock (int id,CycleStockUpdateDto cyclestockdto)
+        {
+            var existingCycle = await _cycleService.GetCycleByID(id);
+            if(existingCycle == null)
+            {
+                return NotFound($"Cycle with {id} not found");
+            }
+
+            existingCycle.StockQuantity = cyclestockdto.StockQuantity;
+            existingCycle.UpdatedDate = DateTime.UtcNow;
+
+            await _cycleService.UpdateCycle(existingCycle);
+
+            return Ok(new { Message = "Stock Updated Successfully" });
         }
 
 

@@ -1,165 +1,158 @@
 
-
 .employee-header {
-    display: flex;
-  
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  
-    .search-bar {
-      padding: 10px 20px;
-      width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 25px;
-      font-size: 16px;
-      outline: none;
-      transition: box-shadow 0.3s;
-  
-      &:focus {
-        box-shadow: 0 0 5px #6c63ff;
-      }
-    }
-  
-    .btn-add {
-      background: linear-gradient(to right, #6c63ff, #5a54d1);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-  
-      &:hover {
-        background: linear-gradient(to right, #5a54d1, #6c63ff);
-      }
-    }
-  }
-  
-  .filter-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  
-    button {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid #6c63ff;
-      background: white;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s;
-  
-      &:hover {
-        background: #6c63ff;
-        color: white;
-      }
-    }
-  }
-  
-  /* ⭐ Main container to make multiple cards align properly */
-  .employee-grid {
-    display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  }
-  
-  /* ⭐ Employee Card */
-  .employee-card {
- 
-    text-align: center;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s;
-    
-    
-    &:hover {
-      transform: translateY(-5px);
-    }
-    
-    .avatar {
-      background: linear-gradient(to right, #6c63ff, #5a54d1);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  font-size: 24px;
-  color: white;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-    }
-  
-    .employee-info {
-        margin-bottom: 15px;
-      }
-      
-      .employee-info h4 {
-        margin: 5px 0;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      
-      .employee-info p {
-        margin: 2px 0;
-        font-size: 14px;
-        color: #555;
-      }
-      
-      .status {
-        margin-top: 8px;
-        font-weight: bold;
-      }
-      
-      .status.active {
-        color: green;
-      }
-      
-      .status.inactive {
-        color: red;
-      }
-      
-      .employee-actions {
-        display: flex;
-        gap: 10px;
-      }
-      
-      .edit-btn, .delete-btn {
-        padding: 6px 12px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 14px;
-      }
-      
-      .edit-btn {
-        background-color: #6c63ff;
-        color: white;
-      }
-      
-      .delete-btn {
-        background-color: #f80c0c;
-        color: white;
-      }
-  
+  margin-bottom: 16px;
 
+  .search-bar {
+    padding: 8px 16px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.2s;
+
+    &:focus {
+      box-shadow: 0 0 4px #6c63ff;
+    }
   }
 
- //popup for confirmation 
+  .btn-add {
+    background: linear-gradient(to right, #6c63ff, #5a54d1);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: linear-gradient(to right, #5a54d1, #6c63ff);
+    }
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  button {
+    padding: 6px 12px;
+    border-radius: 18px;
+    border: 1px solid #6c63ff;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #6c63ff;
+      color: white;
+    }
+  }
+}
+
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.employee-card {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  .avatar {
+    background: linear-gradient(to right, #6c63ff, #5a54d1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .employee-info {
+    margin-bottom: 12px;
+    
+    h4 {
+      margin: 4px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    p {
+      margin: 2px 0;
+      font-size: 13px;
+      color: #555;
+    }
+    
+    .status {
+      margin-top: 6px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    
+    .status.active {
+      color: green;
+    }
+    
+    .status.inactive {
+      color: red;
+    }
+  }
+  
+  .employee-actions {
+    display: flex;
+    gap: 8px;
+    
+    .edit-btn, .delete-btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    
+    .edit-btn {
+      background-color: #6c63ff;
+      color: white;
+    }
+    
+    .delete-btn {
+      background-color: #f80c0c;
+      color: white;
+    }
+  }
+}
+
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); // dark transparent background
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,42 +161,42 @@
 
 .popup-container.confirm-popup {
   background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
-  width: 350px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  width: 300px;
   text-align: center;
-  animation: popupFadeIn 0.3s ease-in-out;
+  animation: popupFadeIn 0.2s ease-in-out;
 
   h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
     color: #333;
   }
 
   p {
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
     color: #666;
   }
 
   .popup-buttons {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.8rem;
 
     button {
       flex: 1;
-      padding: 10px 0;
-      font-size: 1rem;
+      padding: 8px 0;
+      font-size: 0.9rem;
       font-weight: bold;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.2s;
 
       &.btn-yes {
-        background-color: #e53935; // red for delete
+        background-color: #e53935;
         color: #fff;
 
         &:hover {
@@ -223,11 +216,10 @@
   }
 }
 
-// Nice fade-in animation
 @keyframes popupFadeIn {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
@@ -235,22 +227,61 @@
   }
 }
 
-  
-  //active and inactive buttons
 .active-btn {
   background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 15px;
-  padding: 5px 15px;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
 }
 
 .inactive-btn {
   background-color: #6c757d;
   color: white;
   border: none;
-  border-radius: 15px;
-  padding: 5px 15px;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
 }
 
 
+
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  grid-column: 1 / -1;
+
+  button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover:not(:disabled) {
+      // background: #f5f5f5;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      background: #6c63ff;
+      color: white;
+      border-color: #6c63ff;
+    }
+
+    i {
+      font-size: 0.8rem;
+    }
+  }
+}

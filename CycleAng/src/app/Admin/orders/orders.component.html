@@ -1,51 +1,251 @@
-<div class="orders-header">
-    <input type="text" placeholder="Search orders..." class="search-bar">
-    <button class="btn-add"><i class="fa fa-plus"></i> Add Order</button>
-  </div>
-  
-  <div class="filter-buttons">
-    <button class="active">All</button>
-    <button>Pending</button>
-    <button>Shipped</button>
-    <button>Delivered</button>
-    <button>Cancelled</button>
-  </div>
-  
-  <div class="orders-grid">
-    <div class="order-card">
-      <div class="order-top">
-        <h4>#ORD1234</h4>
-        <span class="badge pending">Pending</span>
+
+   <div class="dashboard-summary">
+    <!-- Summary Card -->
+    <div class="summary-card total-orders">
+      <div class="summary-icon">
+        <i class="fas fa-shopping-bag"></i>
       </div>
-      <div class="order-info">
-        <p><i class="fa fa-user"></i> John Doe</p>
-        <p><i class="fa fa-shopping-cart"></i> 3 items</p>
-        <p><i class="fa fa-calendar"></i> 09 Apr 2025</p>
-        <p><i class="fa fa-rupee-sign"></i> 4500</p>
+      <div class="summary-content">
+        <h3>{{getTotalOrdersCount()}}</h3>
+        <p>Total Orders</p>
       </div>
-      <div class="order-actions">
-        <button class="view-btn"><i class="fa fa-eye"></i></button>
-        <button class="edit-btn"><i class="fa fa-pen"></i></button>
-        <button class="delete-btn"><i class="fa fa-trash"></i></button>
+      <div class="summary-trend up">
+        <i class="fas fa-arrow-up"></i> 12%
       </div>
     </div>
   
-    <div class="order-card">
-      <div class="order-top">
-        <h4>#ORD1235</h4>
-        <span class="badge delivered">Delivered</span>
+    <!-- Revenue Card -->
+    <div class="summary-card cancelled-orders">
+      <div class="summary-icon">
+        <i class="fas fa-cancel"></i>
       </div>
-      <div class="order-info">
-        <p><i class="fa fa-user"></i> Jane Smith</p>
-        <p><i class="fa fa-shopping-cart"></i> 5 items</p>
-        <p><i class="fa fa-calendar"></i> 08 Apr 2025</p>
-        <p> {{ 6700 | currency:'INR'}} </p>
+      <div class="summary-content">
+        <h3>{{getCancelledOrdersCount() | number}}</h3>
+        <p>Cancelled Order </p>
       </div>
-      <div class="order-actions">
-        <button class="view-btn fa fa-eye"></button>
-        <button class="edit-btn fa fa-pen"></button>
-        <button class="delete-btn fa fa-trash"></button>
+      <div class="summary-trend up">
+        <i class="fas fa-arrow-up"></i> 18%
+      </div>
+    </div>
+  
+    <!-- Pending Card -->
+    <div class="summary-card pending-orders">
+      <div class="summary-icon">
+        <i class="fas fa-clock"></i>
+      </div>
+      <div class="summary-content">
+        <h3>{{getPendingOrdersCount() | number}}</h3>
+        <p>Pending Orders</p>
+      </div>
+      <div class="summary-trend down">
+        <i class="fas fa-arrow-down"></i> 5%
+      </div>
+    </div>
+  
+       <!-- Shipped Card -->
+       <div class="summary-card shipped-orders">
+        <div class="summary-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <div class="summary-content">
+          <h3>{{getShippedOrdersCount() | number}}</h3>
+          <p>Shipped Orders</p>
+        </div>
+        <div class="summary-trend down">
+          <i class="fas fa-arrow-down"></i> 5%
+        </div>
+      </div>
+
+
+    <!-- Delivered Card -->
+    <div class="summary-card delivered-orders">
+      <div class="summary-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="summary-content">
+        <h3>{{getDeliveredOrdersCount() | number}}</h3>
+        <p>Delivered</p>
+      </div>
+      <div class="summary-trend up">
+        <i class="fas fa-arrow-up"></i> 22%
       </div>
     </div>
   </div>
-  
+   <div class="orders-container">
+    <div class="orders-header">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search orders by ID, customer or status..." class="search-bar" [(ngModel)]="searchItem" (input)="searchOrders()">
+      </div>
+      <div class="sort-filter">
+        <div class="sort-dropdown">
+          <i class="fas fa-sort-amount-down"></i>
+          <select [(ngModel)]="selectedSort" (change)="sortOrders()">
+            <option value="">Sort by</option>
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="pricehigh">Price: High to Low</option>
+            <option value="pricelow">Price: Low to High</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filter-buttons">
+      <button [class.active]="selectedStatus === 'all'" (click)="filterOrdersByStatus('all')"><i class="fas fa-list"></i> All Orders</button>
+      <button (click)="filterOrdersByStatus('Pending')" [class.active]="selectedStatus==='Pending'"><i class="fas fa-clock"></i> Pending</button>
+      <button (click)="filterOrdersByStatus('Shipped')" [class.active]="selectedStatus==='Shipped'"><i class="fas fa-truck"></i> Shipped</button>
+      <button (click)="filterOrdersByStatus('Delivered')" [class.active]="selectedStatus==='Delivered'"><i class="fas fa-check-circle"></i> Delivered</button>
+      <button (click)="filterOrdersByStatus('Cancelled')" [class.active]="selectedStatus==='Cancelled'"><i class="fas fa-times-circle"></i> Cancelled</button>
+    </div>
+    
+    <div class="orders-grid">
+      <div class="order-card" *ngFor="let order of paginatedCycles">
+        <div class="order-top">
+          <div>
+            <h4>#ORD{{order.orderID}}</h4>
+            <p class="order-date"><i class="far fa-calendar-alt"></i> {{order.orderDate | date : 'd MMMM,y'}}</p>
+          </div>
+          <span class="badge pending" [ngClass]="order?.status.toLowerCase()">{{order.status}}</span>
+        </div>
+        <div class="order-customer">
+          <div  class="customer-avatar">{{getInitials(order.customer.firstName,order.customer.lastName)}}</div>
+          <div>
+            <h5> {{order.customer.firstName}} {{order.customer.lastName}}</h5>
+            <p><i class="fas fa-envelope"></i> {{order.customer.email}}</p>
+          </div>
+        </div>
+        <div class="order-details">
+          <div class="detail-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>{{ order.detailscount}} Item{{order.detailscount >1 ? "s" :''}}</span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-rupee-sign"></i>
+            <span>₹{{order.totalAmount}}</span>
+          </div>
+        </div>
+        <div class="order-actions">
+          <button class="view-btn" title="View Details" (click)="toggleModal(order)"><i class="fas fa-eye"></i></button>
+          <div class="status-dropdown">
+            <select class="status-select" [(ngModel)]="order.status" (change)="updateOrderStatus(order.orderID,order.status)" [ngClass]="order?.status.toLowerCase()">
+              <option value="Pending">Pending</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <button class="print-btn" title="Print Invoice"><i class="fas fa-print"></i></button>
+        </div>
+      </div>
+    
+
+      
+    <!-- Pagination -->
+    <div class="pagination" *ngIf="filteredOrders.length > itemsPerPage">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        *ngFor="let page of pages"
+        (click)="goToPage(page)"
+        [class.active]="page === currentPage"
+      >
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    </div>
+  </div>
+
+
+
+  <!-- This would appear when clicking "View Details" on an order card -->
+<div class="order-details-modal" [class.active]="showModal" *ngIf="selectedOrder">
+  <div class="modal-overlay" (click)="showModal=false"></div>
+  <div class="modal-container">
+    <button class="close-modal" (click)="showModal=false"><i class="fas fa-times"></i></button>
+    
+    <div class="modal-header">
+      <h3>Order Details <span class="order-id">#ORD1234 {{selectedOrder.orderID}}</span></h3>
+      <span class="badge delivered" [ngClass]="selectedOrder.status.toLowerCase()">{{selectedOrder.status}}</span>
+    </div>
+    
+    <div class="modal-body">
+      <div class="details-grid">
+        <!-- Order Summary Section -->
+        <div class="details-section">
+          <h4><i class="fas fa-info-circle"></i> Order Summary</h4>
+          <div class="detail-row">
+            <span class="detail-label">Order Date:</span>
+            <span class="detail-value">{{selectedOrder.orderDate | date : 'd MMMM,y'}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Customer:</span>
+            <span class="detail-value">{{selectedOrder.customer.firstName}} {{selectedOrder.customer.lastName}} ({{selectedOrder.customer.email}})</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Total Items:</span>
+            <span class="detail-value">{{ selectedOrder.detailscount}} Item{{selectedOrder.detailscount >1 ? "s" :''}}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Grand Total:</span>
+            <span class="detail-value highlight">₹{{selectedOrder.totalAmount}}</span>
+          </div>
+        </div>
+        
+        <!-- Items Table Section -->
+        <div class="details-section">
+          <h4><i class="fas fa-box-open"></i> Items</h4>
+          <div class="items-table">
+            <div class="table-header">
+              <div>Product</div>
+              <div>Unit Price</div>
+              <div>Qty</div>
+              <div>Total</div>
+            </div>
+            
+            <div class="table-row" *ngFor="let item of selectedOrder.ordersDetails">
+              <div class="product-info">
+                <div class="product-name">{{item.cycle.brand}} ,{{item.cycle.modelName}} (Cycle #{{item.cycle.cycleID}})</div>
+                <div class="product-id">OrderDetailID: {{item.orderDetailID}} • OrderID: {{item.orderID}} • CycleID: {{item.cycle.cycleID}}</div>
+              </div>
+              <div>₹{{item.unitPrice}}</div>
+              <div>{{item.quantity}}</div>
+              <div>₹{{item.totalPrice}}</div>
+            </div>
+            
+            <!-- <div class="table-row">
+              <div class="product-info">
+                <div class="product-name">Tea Sampler Pack (Cycle #5)</div>
+                <div class="product-id">OrderDetailID: 790 • OrderID: 1234 • CycleID: 5</div>
+              </div>
+              <div>₹700.00</div>
+              <div>1</div>
+              <div>₹700.00</div>
+            </div> -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-footer">
+      <button class="btn-secondary"><i class="fas fa-print"></i> Print Invoice</button>
+      <button class="btn-primary"><i class="fas fa-truck"></i> Update Shipping</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf=" filteredOrders.length === 0">
+    <i class="fas fa-bicycle"></i>
+    <h3>No Orders Found</h3>
+    <p>Try adjusting your search or add a new cycle</p>
+    <!-- <button class="add-btn" (click)="openAddForm()">
+      <i class="fas fa-plus" id="add"></i> Add New Cycle
+    </button> -->
+  </div>

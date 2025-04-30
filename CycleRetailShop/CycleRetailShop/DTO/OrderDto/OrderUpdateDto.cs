@@ -6,7 +6,7 @@
        
     
             public string Status { get; set; }
-            public decimal TotalAmount { get; set; }
+            //public decimal TotalAmount { get; set; }
         
        
 

@@ -9,6 +9,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { parse } from 'path';
+import { ToastrService } from 'ngx-toastr';
+import e from 'express';
 
 @Component({
   selector: 'app-inventory',
@@ -25,6 +27,7 @@ export class InventoryComponent {
   selectedType = 'all';
   isLoading = false;
 
+  particles = Array(20).fill(0);
   cycleForm!: FormGroup;
   showForm = false;
   isEditMode = false;
@@ -32,7 +35,8 @@ export class InventoryComponent {
   selectedFile: File | null = null;
   constructor(
     private inventoryService: InventoryService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private  toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -41,6 +45,7 @@ export class InventoryComponent {
 
 
     this.cycleForm = this.fb.group({
+      cycleID: [0],
       brand: ['', [Validators.required]],
       modelName: ['', [Validators.required]],
       type: ['', [Validators.required]],
@@ -53,20 +58,26 @@ export class InventoryComponent {
   }
 
   onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
-
-    if (this.selectedFile) {
+    const file = event.target.files[0];
+    
+    if (file) {
+      
+      this.selectedFile = file;
       const reader = new FileReader();
       reader.onload = () => {
         this.imagePreview = reader.result;
       };
-      reader.readAsDataURL(this.selectedFile);
+      reader.readAsDataURL(file);
     }
   }
   removeImage() {
+    this.selectedFile = null;
+    this.imagePreview = null;
+    this.cycleForm.patchValue({ imageUrl: '' });
   }
 
   getAllCycles() {
+    this.isLoading = true;
     this.inventoryService.getAllProducts().subscribe({
       next: (data) => {
         this.cycles = data;
@@ -87,38 +98,91 @@ export class InventoryComponent {
     }
     const cycleData = new FormData();
     const cycleValue=this.cycleForm.value;
+    console.log(this.selectedFile);
+  
 
     for (const key in cycleValue) {
       cycleData.append(key, cycleValue[key]);
     }
     if(this.selectedFile) {
       cycleData.append('imageUrl', this.selectedFile, this.selectedFile.name);  
-
+    } else if(this.isEditMode && this.existingImageUrl) {
+      cycleData.append('imageUrl', this.existingImageUrl);
     }
 
     const request= this.isEditMode
-    ? this.inventoryService.updateProduct(this.cycleForm.value.id, cycleData)
+    ? this.inventoryService.updateProduct(this.cycleForm.value.cycleID, cycleData)
     : this.inventoryService.addProduct(cycleData);
-
+    
     request.subscribe({
       next:(data)=>{
         console.log(data);
         this.showForm=false;
-        this.cycleForm.reset();
+        this.cycleForm.reset(
+          {cycleID: 0},
+        );
         this.getAllCycles();
+        this.toastr.success(this.isEditMode ? 'Cycle updated successfully!' : 'Cycle added successfully!');
+        this.selectedFile = null;
+        this.imagePreview = null;
+        
         // this.isEditMode = false;
       },
       error:(err)=>{
+        console.log(this.cycleForm.value);
+        console.log(err);
+        this.toastr.error('Error occurred while saving the cycle!');
+      },
+    });
+    
+  }
+  showConfirmPopup: boolean = false;
+  cycleToDeleteId: any | null = null;
+
+  onDeleteClick(cycleId: any) {
+    this.cycleToDeleteId = cycleId;
+    console.log('Cycle ID to delete:', this.cycleToDeleteId);
+    this.showConfirmPopup = true;
+  }
+
+  confirmDelete(confirm: boolean) {
+    if (confirm && this.cycleToDeleteId !== null) {
+      console.log('Deleting cycle with ID:', this.cycleToDeleteId);
+      this.deleteCycle(this.cycleToDeleteId);
+      this.toastr.success('Cycle deleted successfully!');
+    } else {
+      console.log('Deletion cancelled');
+      this.toastr.info('Cycle deletion cancelled!');
+    }
+    this.showConfirmPopup = false;
+    this.cycleToDeleteId = null;
+  }
+
+
+  deleteCycle(cycleID: any) {
+    this.inventoryService.deleteProduct(cycleID).subscribe({
+      next: (data) => {
+        
+        console.log(data);
+        this.getAllCycles();
+      },
+      error: (err) => {
         console.log(err);
       },
     });
-
   }
-    
-  openEditForm(cycle: object) {
+  
+
+  existingImageUrl: string = '';
+  openEditForm(cycle: any) {
     this.isEditMode = true;
     this.showForm = true;
     this.cycleForm.patchValue(cycle);
+    this.imagePreview = `https://localhost:7028/${cycle.imageUrl}`  ;
+    this.existingImageUrl = cycle.imageUrl;
+    // this.imagePreview = cycle.imageUrl;
+    console.log(this.imagePreview);
+    console.log(cycle);
   }
  
   openAddForm() {
@@ -139,8 +203,10 @@ export class InventoryComponent {
       return matchesSearchQuery && matchesType;
     });
   }
+
   getUniqueTypes() {
-    return this.cycles.map((cycle) => cycle.type);
+    const types=this.cycles.map((cycle) => cycle.type);
+    return Array.from(new Set(types));
   }
  
   getStockClass(stock: number): any {
@@ -158,7 +224,6 @@ export class InventoryComponent {
 
 
 
-  deleteCycle(cycle: any) {}
 
   getAvailableCount(): any {
     return this.cycles.filter((cycle) => cycle.stockQuantity > 10).length;
