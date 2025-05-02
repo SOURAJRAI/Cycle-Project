@@ -1,8 +1,9 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { OrderService } from '../../Service/order.service';
 import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from '../../Service/loginService/login.service';
 
 @Component({
   selector: 'app-orders',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class OrdersComponent {
     showModal= false;
-
+    role=inject(LoginService);
     constructor(private orderService:OrderService,
       private toastrService:ToastrService
     ) { }
@@ -20,12 +21,22 @@ export class OrdersComponent {
     orderDetails: any[] = [];
     combinedData: any[] = [];
     filteredOrders: any[] = [];
+    UserRole :string ='';
 
     ngOnInit() {
         this.getAllOrders();
         this.getAllOrderDetails();
         this.getCombinedData();
+        this.getRole();
+        console.log(this.UserRole);
     }
+
+    getRole(){
+
+      this.UserRole = this.role.getRole();
+
+    }
+  
 
     getAllOrders() {
         this.orderService.getAllOrders().subscribe((data: any) => {
@@ -124,7 +135,7 @@ export class OrdersComponent {
 
 
 
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 4;
   currentPage: number = 1;
 
   get paginatedCycles(): any[] {

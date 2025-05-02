@@ -73,9 +73,14 @@
   </div>
    <div class="orders-container">
     <div class="orders-header">
+      <div class="search-add-wrapper">
       <div class="search-container">
         <i class="fas fa-search"></i>
         <input type="text" placeholder="Search orders by ID, customer or status..." class="search-bar" [(ngModel)]="searchItem" (input)="searchOrders()">
+      </div>
+      <button class="btn-add" *ngIf="UserRole=='Employee'">
+        <i class="fas fa-plus-circle"></i> Add Order
+      </button>
       </div>
       <div class="sort-filter">
         <div class="sort-dropdown">

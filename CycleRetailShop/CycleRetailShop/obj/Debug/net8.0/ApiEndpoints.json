@@ -125,6 +125,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CycleRetailShop.Controllers.CustomerController",
+    "Method": "GetCustomerByMobile",
+    "RelativePath": "api/Customer/by-mobile/{mobile}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mobile",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CycleRetailShop.Controllers.CycleController",
     "Method": "GetAllCycles",
     "RelativePath": "api/Cycle",

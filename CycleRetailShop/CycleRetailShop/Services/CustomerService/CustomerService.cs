@@ -56,6 +56,15 @@ namespace CycleRetailShop.Services.CustomerService
             await _context.SaveChangesAsync();
 
         }
+        public async Task<Customer> GetCustomerByMobile(string mobile)
+        {
+            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.PhoneNumber == mobile);
+            if (customer == null)
+            {
+                throw new KeyNotFoundException($"Customer with mobile {mobile} not found");
+            }
+            return customer;
+        }
 
     }
 }

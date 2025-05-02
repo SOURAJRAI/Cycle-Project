@@ -113,6 +113,23 @@ namespace CycleRetailShop.Controllers
             }
         }
 
+
+        [HttpGet("by-mobile/{mobile}")]
+        public async Task<IActionResult> GetCustomerByMobile(string mobile)
+        {
+            try
+            {
+                var customer = await _customerService.GetCustomerByMobile(mobile);
+                return Ok(customer);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+
+
+
     }
 
 }

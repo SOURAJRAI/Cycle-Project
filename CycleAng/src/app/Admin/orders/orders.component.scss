@@ -334,11 +334,25 @@ $medium-gray: #777;
   }
 }
 
+.search-add-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.sort-filter {
+  margin-left: auto;
+}
 
 .orders-container {
   padding: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
 
 .orders-header {
   display: flex;
@@ -347,6 +361,31 @@ $medium-gray: #777;
   margin-bottom: 20px;
   flex-wrap: wrap;
   gap: 12px;
+}
+.btn-add {
+  background: linear-gradient(135deg, #6c63ff 0%, #4a42d1 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(108, 99, 255, 0.2);
+  
+  &:hover {
+    background: linear-gradient(135deg, #5a54d1 0%, #3a35b0 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
+  }
+  
+  i {
+    font-size: 16px;
+  }
 }
 
 .search-container {
@@ -656,8 +695,8 @@ $medium-gray: #777;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    // color: #6c63ff;
-    color:whitesmoke;
+    color: #6c63ff;
+    // color:whitesmoke;
     font-size: 11px;
   }
 
@@ -671,27 +710,38 @@ $medium-gray: #777;
     appearance: none;
     cursor: pointer;
     font-size: 12px;
+    font-weight: 700;
     transition: all 0.3s;
 
     &.pending
     { 
-      background: linear-gradient(135deg, #2196F3, #62b8ff); 
-      color: white;
+      // background: linear-gradient(135deg, #2196F3, #62b8ff); 
+      // color: white;
+      background: #e0f0ff;
+      color: #2196F3;
+
     } 
     &.shipped
     {
-       background: linear-gradient(135deg, #ff9901, #facf41); 
-       color : white;
+      //  background: linear-gradient(135deg, #ff9901, #facf41); 
+      //  color : white;
+      background: #fff5e6;
+      color: #FF9800;
       } 
     &.delivered
     { 
-      background: linear-gradient(135deg, #10ff44, #6be77c); 
-      color : white;
+      // background: linear-gradient(135deg, #11d13b, #75dd83); 
+      // color : white;
+      background: #e6ffe6;
+      color: #4CAF50;
     } 
     &.cancelled
     { 
-      background: linear-gradient(135deg, #ee5353, #ff6060); 
-      color : white;
+      // background: linear-gradient(135deg, #ee5353, #ff6060); 
+      // color : white;
+
+      background: #ffe6e6;
+      color: #F44336;
     }
 
     
@@ -865,3 +915,4 @@ $medium-gray: #777;
   }
   
 }
+

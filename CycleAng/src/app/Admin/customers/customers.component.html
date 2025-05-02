@@ -36,7 +36,7 @@
       </div>
     </div>
     
-    <div class="summary-card inactive">
+    <div class="summary-card inactive" *ngIf="UserRole =='Admin'">
       <div class="card-icon">
         <i class="fas fa-user-clock"></i>
       </div>
@@ -51,7 +51,7 @@
   
   <!-- Filter and View Options -->
   <div class="action-bar">
-    <div class="filter-buttons">
+    <div class="filter-buttons" *ngIf="UserRole == 'Admin' ">
       <button (click)="filterByStatus('all')" [class.active]="selectedFilter =='all'">
         <i class="fas fa-layer-group"></i> All
       </button>
@@ -85,7 +85,7 @@
           <button class="edit-btn" (click)="openAddCustomer(customer)">
             <i class="fas fa-pencil-alt"></i>
           </button>
-          <button class="delete-btn" (click)="onDeleteClick(customer.customerID)">
+          <button class="delete-btn" (click)="onDeleteClick(customer.customerID)" *ngIf="UserRole == 'Admin' ">
             <i class="fas fa-trash-alt"></i>
           </button>
         </div>
@@ -105,7 +105,7 @@
       </div>
       
       <div class="card-footer">
-        <button 
+        <button  *ngIf="UserRole == 'Admin' "
           [class.active-btn]="customer.status == '1'" 
           [class.inactive-btn]="customer.status == '0'"
           (click)="toggleStatus(customer)">
@@ -132,7 +132,7 @@
   </div>
   
   <!-- Customer List Table View -->
-  <div class="customer-table" *ngIf="viewMode === 'list'">
+  <div class="customer-table" *ngIf="viewMode === 'list'" >
     <table>
       <thead>
         <tr>
@@ -144,7 +144,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of filteredCustomers">
+        <tr *ngFor="let customer of paginatedCycles">
           <td class="customer-name">
             <div class="avatar" [ngStyle]="{'background-color': getRandomColor()}" style="color: white;">
               {{getInitials(customer.firstName,customer.lastName)}}
@@ -165,16 +165,32 @@
             <button class="edit-btn" (click)="openAddCustomer(customer)">
               <i class="fas fa-pencil-alt"></i>
             </button>
-            <button class="delete-btn" (click)="onDeleteClick(customer.customerID)">
+            <button class="delete-btn" (click)="onDeleteClick(customer.customerID)"  *ngIf="UserRole=='Admin'">
               <i class="fas fa-trash-alt"></i>
             </button>
-            <button class="status-btn" (click)="toggleStatus(customer)">
+            <button class="status-btn" (click)="toggleStatus(customer)" *ngIf="UserRole=='Admin'">
               <i class="fas" [class.fa-toggle-on]="customer.status == '1'" [class.fa-toggle-off]="customer.status == '0'"></i>
             </button>
           </td>
         </tr>
       </tbody>
     </table>
+
+  </div>
+  <div class="pagination" *ngIf="filteredCustomers.length > itemsPerPage">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button
+      *ngFor="let page of pages"
+      (click)="goToPage(page)"
+      [class.active]="page === currentPage"
+    >
+      {{ page }}
+    </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </div>
   
   <!-- Empty State -->

@@ -10,6 +10,7 @@ import { AdminlayoutComponent } from './Admin/adminlayout/adminlayout.component'
 import { EmployeeLayoutComponent } from './Employee/employee-layout/employee-layout.component';
 import { guardGuard } from './Guard/guard.guard';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
+import { ProductComponent } from './Employee/product/product.component';
 
 
 
@@ -31,7 +32,7 @@ export const routes: Routes = [
             {path:'',redirectTo:'dashboard',pathMatch:'full'},
             {path:'employeedashboard', component:EmployeeDashboardComponent},
             {path:'employeeemployee', component:EmployeeComponent},
-            {path:'employeeinventory', component:InventoryComponent},
+            {path:'employeeproducts', component:ProductComponent},
             {path:'employeecustomers', component:CustomersComponent},
             {path:'employeeorders', component:OrdersComponent}
         ]

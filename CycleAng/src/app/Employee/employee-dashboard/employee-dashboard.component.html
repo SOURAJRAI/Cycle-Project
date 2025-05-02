@@ -1,0 +1,78 @@
+<div class="dashboard">
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="card-icon">
+          <i class="fas fa-bicycle"></i>
+        </div>
+        <div class="card-content">
+          <h3>Total Cycles</h3>
+          <p>42</p>
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div class="card-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="card-content">
+          <h3>Available</h3>
+          <p>28</p>
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div class="card-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="card-content">
+          <h3>Pending Order</h3>
+          <p>10</p>
+        </div>
+      </div>
+      
+    
+    </div>
+
+
+
+  
+    <!-- Tables Section -->
+    <div class="tables-section">
+      <!-- Recent Orders Table -->
+      
+      
+
+
+
+      <div class="table-card">
+        <div class="table-header">
+          <h2>Recent Orders</h2>
+          <a class="view-all" routerLink="/employee/employeeorders">View All</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Time</th>
+                <th>Cycle</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of recentorders">
+                <td>{{order.id}}</td>
+                <td> {{order.name}}</td>
+                <td>{{order.time}}</td>
+                <td>{{order.product}}</td>
+                <td><span class="status" [ngClass]="order.status?.toLowerCase()"> {{order.status}}</span></td>
+              </tr>
+              <!-- More rows... -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

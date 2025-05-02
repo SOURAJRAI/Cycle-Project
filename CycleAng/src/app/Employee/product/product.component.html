@@ -1,0 +1,58 @@
+<div class="bicycle-container">
+<div class="bicycle-card" *ngFor="let bicycle of cycles">
+    <div class="card-image">
+      <img [src]="'https://localhost:7028' + bicycle.imageUrl || 'assets/default-bike.jpg'" [alt]="bicycle.modelName">
+      <div class="price-badge">${{bicycle.price.toFixed(2)}}</div>
+      <div class="type-badge">{{bicycle.type}}</div>
+    </div>
+  
+    <div class="card-content">
+      <h3>{{bicycle.brand}}</h3>
+      <p class="model">{{bicycle.modelName}}</p>
+      
+      <div class="stock-status" [class.in-stock]="bicycle.stockQuantity > 0">
+        <i class="fas fa-box"></i>
+        {{bicycle.stockQuantity > 0 ? 'In Stock' : 'Out of Stock'}}
+      </div>
+  
+      <button class="view-details-btn" (click)="openModal(bicycle)">
+        <i class="fas fa-eye"></i> View Details
+      </button>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal" *ngIf="showModal">
+    <!-- <div class="modal-backdrop" (click)="closeModal()"></div> -->
+    
+    <div class="modal-container">
+      <button class="close-btn" (click)="closeModal()">
+        <i class="fas fa-times"></i>
+      </button>
+  
+      <div class="modal-image">
+        <img [src]="'https://localhost:7028'+bicycle.imageUrl || 'assets/default-bike.jpg'" [alt]="bicycle.modelName">
+      </div>
+  
+      <div class="modal-details">
+        <h2>{{bicycle.brand}} {{bicycle.modelName}}</h2>
+        <div class="price">${{bicycle.price.toFixed(2)}}</div>
+        
+        <div class="details">
+          <p><i class="fas fa-bicycle"></i> Type: {{bicycle.type}}</p>
+          <p><i class="fas fa-shield-alt"></i> Warranty: {{bicycle.warrantyPeriod}}</p>
+          <p><i class="fas fa-box"></i> Stock: {{bicycle.stockQuantity}} available</p>
+          <p><i class="fas fa-calendar"></i> Added: {{bicycle.addedDate | date}}</p>
+        </div>
+  
+        <div class="description">
+          <h3>About this bike</h3>
+          <p>{{bicycle.description || 'No description available'}}</p>
+        </div>
+  
+      
+      </div>
+    </div>
+  </div>
+
+</div>

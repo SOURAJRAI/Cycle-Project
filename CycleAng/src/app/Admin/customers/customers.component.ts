@@ -1,8 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { CustomerService } from '../../Service/customer.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { LoginService } from '../../Service/loginService/login.service';
 
 @Component({
   selector: 'app-customers',
@@ -21,14 +22,20 @@ export class CustomersComponent {
   activeCustomer: any;
   customerCount:any;
   selectedFilter:'all' | 'active' | 'inactive' = 'all';
-    viewMode:'grid' | 'list' ='grid';
+  viewMode:'grid' | 'list' ='grid';
+
+  role=inject(LoginService);
+  UserRole : string ='';
   constructor(private customerService:CustomerService) { }
 
   ngOnInit() {
+    this.getRole();
     this.customerService.getAllCustomers().subscribe({
       next:(datas) => {
         this.allCustomers = datas;
-        this.filteredCustomers = this.allCustomers;
+        // this.filteredCustomers = this.allCustomers;
+        this.filteredCustomers = this.UserRole == 'Employee' ? datas.filter((c :any )=> c.status == 1) : datas;
+        console.log(this.filteredCustomers);
         console.log(this.allCustomers);
         this.customerCountAll();
         this.customerCountByActive();
@@ -39,7 +46,12 @@ export class CustomersComponent {
       }
     
     });
-    
+  }
+  
+  getRole(){
+
+    this.UserRole = this.role.getRole();
+    console.log(this.UserRole);
   }
 
   customerCountAll(){
@@ -185,7 +197,7 @@ export class CustomersComponent {
   }
 
   
-  itemsPerPage: number = 3;
+  itemsPerPage: number = 4;
   currentPage: number = 1;
 
   get paginatedCycles(): any[] {
@@ -196,14 +208,16 @@ export class CustomersComponent {
     );
   }
 
+  
+  
   get totalPages(): number {
     return Math.ceil(this.filteredCustomers.length / this.itemsPerPage);
   }
-
+  
   get pages(): number[] {
     const pages = [];
     const maxVisiblePages = 5;
-
+    
     if (this.totalPages <= maxVisiblePages) {
       for (let i = 1; i <= this.totalPages; i++) {
         pages.push(i);
@@ -211,32 +225,34 @@ export class CustomersComponent {
     } else {
       let startPage = Math.max(1, this.currentPage - 2);
       let endPage = Math.min(this.totalPages, startPage + maxVisiblePages - 1);
-
+      
       if (endPage - startPage < maxVisiblePages - 1) {
         startPage = Math.max(1, endPage - maxVisiblePages + 1);
       }
-
+      
       for (let i = startPage; i <= endPage; i++) {
         pages.push(i);
       }
     }
-
+    
     return pages;
   }
-
+  
   prevPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
   }
-
+  
   nextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
     }
   }
-
+  
   goToPage(page: number): void {
     this.currentPage = page;
   }
+  
+
 }

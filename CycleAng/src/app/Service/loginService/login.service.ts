@@ -24,4 +24,17 @@ export class LoginService {
     return localStorage.getItem('Token') != null;
    }
 
+   getRole(){
+    const token = localStorage.getItem('Token');
+    if (token) {
+      const Role= token.split('.')[1];
+      const decode = JSON.parse(atob(Role));
+      return decode['role'] ;
+    }
+    return null;
+   }
+
 }
+
+
+

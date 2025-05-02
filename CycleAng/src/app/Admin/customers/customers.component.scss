@@ -426,17 +426,17 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
     
     table {
       width: 100%;
       border-collapse: collapse;
-      
       thead {
         background: linear-gradient(135deg, #6c63ff 0%, #8b85ff 100%);
         color: white;
         
         th {
-          padding: 16px;
+          padding: 14px;
           text-align: left;
           font-weight: 500;
           font-size: 14px;
@@ -465,7 +465,7 @@
           }
           
           td {
-            padding: 16px;
+            padding: 8px;
             font-size: 14px;
             color: #2a2d30;
             
@@ -680,7 +680,7 @@
     display: flex;
     justify-content: center;
     gap: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
     grid-column: 1 / -1;
   
     button {
