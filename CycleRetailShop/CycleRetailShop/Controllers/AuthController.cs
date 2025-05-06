@@ -1,6 +1,7 @@
 ﻿using CycleRetailShop.Services.LoginService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,7 +30,19 @@ namespace CycleRetailShop.Controllers
             {
                 return Unauthorized(new { message = "Invalid credentials" });
             }
-            return Ok(new { Token = token });
+            return Ok(new 
+            { 
+                Token = token.Value.Token,
+                user =new
+                {
+                    token.Value.user.UserID,
+                    token.Value.user.UserName,
+                    token.Value.user.Email,
+                    token.Value.user.Role
+                }
+            
+                
+            });
 
             }
             catch (Exception ex)

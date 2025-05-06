@@ -55,13 +55,13 @@ namespace CycleRetailShop.Controllers
 
         //[Authorize(Roles = "Admin,Employee")]
         [HttpPost]
-        public async Task<ActionResult<OrderDetail>> AddOrderDetail(OrderDetailCreateDto orderDetailDto)
+        public async Task<ActionResult<OrderDetail>> AddOrderDetail([FromBody]OrderDetailCreateDto orderDetailDto)
         {
             try
             {
                 var orderDetail = new OrderDetail
                 {
-                    OrderID = orderDetailDto.OrderID,
+                    //OrderID = orderDetailDto.OrderID,
                     CycleID = orderDetailDto.CycleID,
                     Quantity = orderDetailDto.Quantity,
                     UnitPrice = orderDetailDto.UnitPrice,

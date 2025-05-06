@@ -592,6 +592,37 @@
         }
       }
     },
+    "/api/logfailedAttempts": {
+      "post": {
+        "tags": [
+          "logfailedAttempts"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/failedAttempts"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/failedAttempts"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/failedAttempts"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Order": {
       "get": {
         "tags": [
@@ -1706,10 +1737,6 @@
       "OrderDetailCreateDto": {
         "type": "object",
         "properties": {
-          "orderID": {
-            "type": "integer",
-            "format": "int32"
-          },
           "cycleID": {
             "type": "integer",
             "format": "int32"
@@ -1783,8 +1810,7 @@
           "amountPaid",
           "orderID",
           "paymentDate",
-          "paymentMethod",
-          "paymentStatus"
+          "paymentMethod"
         ],
         "type": "object",
         "properties": {
@@ -1812,7 +1838,8 @@
           "paymentStatus": {
             "maxLength": 20,
             "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "order": {
             "$ref": "#/components/schemas/Order"
@@ -1832,6 +1859,10 @@
             "format": "double"
           },
           "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
             "type": "string",
             "nullable": true
           }
@@ -1998,6 +2029,24 @@
             "readOnly": true
           },
           "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "failedAttempts": {
+        "type": "object",
+        "properties": {
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           }

@@ -35,6 +35,11 @@ export class OrderService {
     return this.http.put<any>(`${this.apiUrl}/${orderID}`,{status:status})
   }
 
+  addOrderDetails(orderDto :any)
+  {
+    return this.http.post<any>(this.apiUrl +"/AddOrderDetails",orderDto);
+  }
+
 
 
 }

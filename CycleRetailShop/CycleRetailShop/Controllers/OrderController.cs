@@ -128,6 +128,9 @@ namespace CycleRetailShop.Controllers
         [HttpPost("AddOrderDetails")]
         public async Task<ActionResult> AddOrderDetails(OrderFullDto orderDto)
         {
+
+            if (orderDto == null || orderDto.orderDetails == null || !orderDto.orderDetails.Any())
+                return BadRequest("Invalid order data.");
             var existingOrder = await _orderService.getPendingOrderByCustomerId(orderDto.CustomerID);
             Order order;
 
@@ -168,7 +171,10 @@ namespace CycleRetailShop.Controllers
             order.TotalAmount = total;
             await _orderService.UpdateOrder(order);
 
-            return Ok(new { Message = "Order and Order Details Saved Successfully" });
+            return Ok(new { 
+                Message = "Order and Order Details Saved Successfully",
+                OrderID=order.OrderID
+            });
 
 
         }

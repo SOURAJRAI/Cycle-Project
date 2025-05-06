@@ -1,0 +1,275 @@
+<div class="billing-container">
+  <div class="progress-steps">
+    <div class="step" [class.active]="currentStep === 1" [class.completed]="currentStep > 1">
+      <div class="step-number">1</div>
+      <div class="step-label">Customer</div>
+    </div>
+    <div class="step" [class.active]="currentStep === 2" [class.completed]="currentStep > 2">
+      <div class="step-number">2</div>
+      <div class="step-label">Order</div>
+    </div>
+    <div class="step" [class.active]="currentStep === 3" [class.completed]="paymentSuccess">
+      <div class="step-number">3</div>
+      <div class="step-label">Payment</div>
+    </div>
+    <div class="step" [class.active]="currentStep === 4">
+      <div class="step-number">4</div>
+      <div class="step-label">Result</div>
+    </div>
+  </div>
+
+  <!-- Customer Step -->
+  <div class="step-content" *ngIf="currentStep === 1">
+    <h2>Customer Information</h2>
+    <form [formGroup]="customerForm" (ngSubmit)="findCustomer()">
+      <div class="form-group">
+        <label for="phone">Customer Phone Number</label>
+        <input type="tel" id="phone" formControlName="phone" placeholder="Enter 10-digit phone number">
+        <div class="error-message" *ngIf="customerForm.get('phone')?.invalid && customerForm.get('phone')?.touched">
+          Please enter a valid 10-digit phone number
+        </div>
+      </div>
+      <button type="submit" class="btn-primary" [disabled]="customerForm.invalid">Find Customer</button>
+    </form>
+  </div>
+
+  <!-- Order Step -->
+  <div class="step-content" *ngIf="currentStep === 2 && customerDetails">
+    <div class="customer-details">
+      <h2>Customer: {{customerDetails.firstName}} {{customerDetails.lastName}}</h2>
+      <p>Email: {{customerDetails.email}}</p>
+      <p>Phone: {{customerDetails.phoneNumber}}</p>
+    </div>
+
+    <div class="order-section">
+      <div class="product-selection">
+        <h3>Add Products</h3>
+        <div class="form-group">
+          <label for="cycle">Select Cycle</label>
+          <select id="cycle" [(ngModel)]="selectedCycle" [ngModelOptions]="{standalone: true}">
+            <option [ngValue]="null" disabled>Select a cycle</option>
+            <option *ngFor="let cycle of filterCycles" [ngValue]="cycle">
+              {{cycle.brand}} {{cycle.model}} (₹{{cycle.price}}) ({{cycle.stockQuantity}})
+            </option>
+          </select>
+        </div>
+
+        <form [formGroup]="orderForm" *ngIf="selectedCycle">
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <div class="quantity-control">
+              <button type="button" (click)="orderForm.get('quantity')?.setValue(orderForm.get('quantity')?.value - 1)" 
+                      [disabled]="orderForm.get('quantity')?.value <= 1">-</button>
+              <input type="number" id="quantity" formControlName="quantity" min="1">
+              <button type="button" (click)="orderForm.get('quantity')?.setValue(orderForm.get('quantity')?.value + 1)">+</button>
+            </div>
+          </div>
+          <button type="button" class="btn-primary" (click)="addToOrder()" [disabled]="orderForm.invalid || !selectedCycle">
+            Add to Order
+          </button>
+        </form>
+      </div>
+
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div class="order-items" *ngIf="orderDetails.length > 0; else emptyOrder">
+          <div class="order-item" *ngFor="let item of orderDetails; let i = index">
+            <div class="item-info">
+              <span class="item-name">{{item.Name}}</span>
+              <span class="item-price">₹{{item.UnitPrice}} × {{item.Quantity}}</span>
+            </div>
+            <div class="item-actions">
+              <div class="quantity-control">
+                <button (click)="updateQuantity(item, item.Quantity - 1)" [disabled]="item.Quantity <= 1">-</button>
+                <span>{{item.Quantity}}</span>
+                <button (click)="updateQuantity(item, item.Quantity + 1)">+</button>
+              </div>
+              <span class="item-total">₹{{item.TotalPrice}}</span>
+              <button class="remove-btn" (click)="removeItem(i)">×</button>
+            </div>
+          </div>
+        </div>
+        <ng-template #emptyOrder>
+          <p class="empty-message">No items added to order</p>
+        </ng-template>
+
+        <div class="order-total">
+          <span>Total:</span>
+          <span>₹{{orderTotal}}</span>
+        </div>
+
+        <button class="btn-primary" (click)="proceedToPayment()" [disabled]="orderDetails.length === 0">
+          Proceed to Payment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Step -->
+  <div class="step-content" *ngIf="currentStep === 3">
+    <div *ngIf="!isPaymentProcessing && !paymentSuccess">
+      <h2>Payment Method</h2>
+      <div class="payment-methods">
+        <div class="payment-method" *ngFor="let method of paymentMethods" 
+             [class.selected]="selectedPaymentMethod === method.id"
+             (click)="selectPaymentMethod(method.id)">
+             <i class="fas {{method.icon}}"></i>
+          <span>{{method.name}}</span>
+        </div>
+      </div>
+
+      <form [formGroup]="paymentForm" (ngSubmit)="processPayment()" *ngIf="selectedPaymentMethod">
+        <div class="payment-details" *ngIf="selectedPaymentMethod === 'upi'">
+          <div class="form-group">
+            <label for="upiId">UPI ID</label>
+            <input type="text" id="upiId" formControlName="upiId" placeholder="Enter UPI ID">
+          </div>
+        </div>
+
+        <div class="payment-details" *ngIf="selectedPaymentMethod === 'card'">
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" formControlName="cardNumber" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cardExpiry">Expiry Date</label>
+              <input type="text" id="cardExpiry" formControlName="cardExpiry" placeholder="MM/YY">
+            </div>
+            <div class="form-group">
+              <label for="cardCvv">CVV</label>
+              <input type="text" id="cardCvv" formControlName="cardCvv" placeholder="123">
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary-payment">
+          <h3>Order Summary</h3>
+          <div class="order-items">
+            <div class="order-item" *ngFor="let item of orderDetails">
+              <span class="item-name">{{item.Name}} × {{item.Quantity}}</span>
+              <span class="item-total">₹{{item.TotalPrice}}</span>
+            </div>
+          </div>
+          <div class="order-total">
+            <span>Total Amount:</span>
+            <span>₹{{orderTotal}}</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" [disabled]="paymentForm.invalid">
+          Complete Payment
+        </button>
+      </form>
+    </div>
+
+    <!-- Payment Processing -->
+    <div class="payment-processing" *ngIf="isPaymentProcessing">
+      <div class="spinner"></div>
+      <p>Processing your payment...</p>
+    </div>
+
+  </div>
+
+
+  <div class="step-content" *ngIf="currentStep === 4">
+    <div class="payment-result" *ngIf="paymentSuccess && printableBill">
+      <div class="success-animation">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <h2>Payment Successful!</h2>
+      <p>Thank you for your purchase. Your order has been completed.</p>
+      
+      <div class="invoice-container" >
+        <div class="printable-bill">
+          <div class="bill-header">
+            <h3>INVOICE</h3>
+            <div class="bill-meta">
+              <p><strong>Order #:</strong> {{printableBill.orderId}}</p>
+              <p><strong>Date:</strong> {{printableBill.date}}</p>
+            </div>
+          </div>
+          
+          <div class="bill-customer">
+            <h4>Bill To:</h4>
+            <p>{{printableBill.customerName}}</p>
+            <p>{{printableBill.customerPhone}}</p>
+          </div>
+          
+          <div class="bill-items">
+            <div class="bill-item header">
+              <span>Description</span>
+              <span>Qty</span>
+              <span>Unit Price</span>
+              <span>Amount</span>
+            </div>
+            <div class="bill-item" *ngFor="let item of printableBill.items">
+              <span>{{item.Name}}</span>
+              <span>{{item.Quantity}}</span>
+              <span>₹{{item.UnitPrice | number:'1.2-2'}}</span>
+              <span>₹{{item.TotalPrice | number:'1.2-2'}}</span>
+            </div>
+          </div>
+          
+          <div class="bill-totals">
+            <div class="bill-total">
+              <span>Subtotal:</span>
+              <span>₹{{printableBill.subtotal | number:'1.2-2'}}</span>
+            </div>
+            <div class="bill-total">
+              <span>Tax (10%):</span>
+              <span>₹{{printableBill.tax | number:'1.2-2'}}</span>
+            </div>
+            <div class="bill-total grand-total">
+              <span>Total:</span>
+              <span>₹{{printableBill.total | number:'1.2-2'}}</span>
+            </div>
+            <div class="bill-payment">
+              <span>Payment Method:</span>
+              <span>{{printableBill.paymentMethod}}</span>
+            </div>
+          </div>
+          
+          <div class="bill-footer">
+            <p>Thank you for your business!</p>
+          </div>
+        </div>
+        
+        <div class="bill-actions">
+          <button class="btn-primary" (click)="printBill()">
+            <i class="print-icon"></i> Print Invoice
+          </button>
+          <button class="btn-secondary" (click)="startNewOrder()">
+            New Order
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-result" *ngIf="!paymentSuccess">
+      <div class="failure-animation">
+        <svg class="crossmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="crossmark__circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="crossmark__cross" fill="none" d="M16 16 36 36 M36 16 16 36"/>
+        </svg>
+      </div>
+      <h2>Payment Failed</h2>
+      <p class="error-message">{{paymentError}}</p>
+      <div class="payment-retry-actions">
+        <button class="btn-primary" (click)="backToPayment()">
+          Retry Payment
+        </button>
+        <button class="btn-secondary" (click)="startNewOrder()">
+          Start New Order
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

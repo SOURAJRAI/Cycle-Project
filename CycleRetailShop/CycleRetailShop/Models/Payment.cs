@@ -24,9 +24,8 @@ namespace CycleRetailShop.Models
         [StringLength(50)]
         public string PaymentMethod { get; set; } 
 
-        [Required]
         [StringLength(20)]
-        public string PaymentStatus { get; set; } = "Pending";  
+        public string PaymentStatus { get; set; } = "Successfull";  
 
        
         public Order Order { get; set; }

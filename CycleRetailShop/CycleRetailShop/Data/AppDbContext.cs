@@ -17,6 +17,8 @@ namespace CycleRetailShop.Data
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Payment> Payments { get; set; }
 
+        public DbSet<FailedPayment> FailedPaymentAttempts { get; set; }
+
     }
 }
 

@@ -15,7 +15,7 @@ namespace CycleRetailShop.Services.LoginService
             _jwtService = jwtService;
         }
 
-        public async Task<string> Login(string username, string password)
+        public async Task<(string Token,User user)?> Login(string username, string password)
         {
             var user =await _context.Users.FirstOrDefaultAsync(u => u.UserName== username);
             if (user == null)
@@ -30,7 +30,12 @@ namespace CycleRetailShop.Services.LoginService
                 return null;
             }
 
-            return _jwtService.GenerateToken(user.UserName, user.Role);
+            var token= _jwtService.GenerateToken(user.UserName, user.Role);
+
+            return (token, user);
+
+
+   
         }
 
 

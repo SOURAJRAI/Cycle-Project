@@ -78,7 +78,7 @@
         <i class="fas fa-search"></i>
         <input type="text" placeholder="Search orders by ID, customer or status..." class="search-bar" [(ngModel)]="searchItem" (input)="searchOrders()">
       </div>
-      <button class="btn-add" *ngIf="UserRole=='Employee'">
+      <button class="btn-add" *ngIf="UserRole=='Employee'" routerLink="/employee/employeebilling">
         <i class="fas fa-plus-circle"></i> Add Order
       </button>
       </div>
@@ -133,7 +133,7 @@
         <div class="order-actions">
           <button class="view-btn" title="View Details" (click)="toggleModal(order)"><i class="fas fa-eye"></i></button>
           <div class="status-dropdown">
-            <select class="status-select" [(ngModel)]="order.status" (change)="updateOrderStatus(order.orderID,order.status)" [ngClass]="order?.status.toLowerCase()">
+            <select class="status-select" [(ngModel)]="order.status" (change)="updateOrderStatus(order.orderID,order.status)" [ngClass]="order?.status.toLowerCase()" [disabled]="order.status=='Delivered'">
               <option value="Pending">Pending</option>
               <option value="Shipped">Shipped</option>
               <option value="Delivered">Delivered</option>

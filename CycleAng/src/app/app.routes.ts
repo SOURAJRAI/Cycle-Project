@@ -11,6 +11,8 @@ import { EmployeeLayoutComponent } from './Employee/employee-layout/employee-lay
 import { guardGuard } from './Guard/guard.guard';
 import { EmployeeDashboardComponent } from './Employee/employee-dashboard/employee-dashboard.component';
 import { ProductComponent } from './Employee/product/product.component';
+import { BillingComponent } from './Employee/billing/billing.component';
+import { AddCustomerComponent } from './Admin/customers/add-customer/add-customer.component';
 
 
 
@@ -29,12 +31,15 @@ export const routes: Routes = [
     },
     {path : 'employee', component:EmployeeLayoutComponent,canActivate:[guardGuard],
         children :[
-            {path:'',redirectTo:'dashboard',pathMatch:'full'},
+            {path:'',redirectTo:'employeedashboard',pathMatch:'full'},
             {path:'employeedashboard', component:EmployeeDashboardComponent},
             {path:'employeeemployee', component:EmployeeComponent},
             {path:'employeeproducts', component:ProductComponent},
+            {path:'employeebilling', component:BillingComponent},
+            {path:'employeeproducts', component:ProductComponent},
             {path:'employeecustomers', component:CustomersComponent},
-            {path:'employeeorders', component:OrdersComponent}
+            {path:'employeeorders', component:OrdersComponent},
+            {path:'employeeAddCustomer', component:AddCustomerComponent},
         ]
     }
     

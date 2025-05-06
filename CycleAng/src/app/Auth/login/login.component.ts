@@ -52,6 +52,8 @@ export class LoginComponent {
         this.toaster.success('Login Successfull');
         console.log("response",response);
         localStorage.setItem('Token',response.token);
+        localStorage.setItem('user',JSON.stringify(response.user));
+ 
         const token= JSON.parse(atob(response.token.split('.')[1]))
         const  role=token.role;
         console.log(role);

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CycleRetailShop.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PaymentController : ControllerBase
@@ -19,7 +19,7 @@ namespace CycleRetailShop.Controllers
             _paymentService = paymentService;
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Payment>>> GetAllPayments()
         {
@@ -33,7 +33,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpGet("{id}")]
         public async Task<ActionResult<Payment>> GetPaymentById(int id)
         {
@@ -48,7 +48,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin,Employee")]
+        //[Authorize(Roles = "Admin,Employee")]
         [HttpPost]
         public async Task<ActionResult<Payment>> AddPayment(PaymentCreateDTO paymentDto)
         {
@@ -59,7 +59,8 @@ namespace CycleRetailShop.Controllers
                     OrderID = paymentDto.OrderID,
                     PaymentDate=DateTime.UtcNow,
                     AmountPaid = paymentDto.AmountPaid,
-                    PaymentMethod = paymentDto.PaymentMethod
+                    PaymentMethod = paymentDto.PaymentMethod,
+                    PaymentStatus=paymentDto.PaymentStatus
                 };
 
                 var createdPayment = await _paymentService.AddPayment(payment);
@@ -71,7 +72,7 @@ namespace CycleRetailShop.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdatePayment(int id, PaymentUpdateDTO paymentDto)
         {
@@ -87,6 +88,7 @@ namespace CycleRetailShop.Controllers
 
                 payment.AmountPaid = paymentDto.AmountPaid;
                 payment.PaymentMethod = paymentDto.PaymentMethod;
+                payment.PaymentStatus = paymentDto.PaymentStatus;
 
                 await _paymentService.UpdatePayment(payment);
                     return Ok(payment);

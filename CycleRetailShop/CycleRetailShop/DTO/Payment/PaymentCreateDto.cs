@@ -5,7 +5,7 @@
         public int OrderID { get; set; }
         public decimal AmountPaid { get; set; }
         public string PaymentMethod { get; set; }
-        //public string PaymentStatus { get; set; } = "pending";
+        public string PaymentStatus { get; set; } = "Unsuccesfull";
 
     }
 
@@ -15,6 +15,6 @@
   
         public decimal AmountPaid { get; set; }
         public string PaymentMethod { get; set; }
-        public string PaymentStatus { get; set; } = "pending"; 
+        public string PaymentStatus { get; set; } = "Unsuccessfull"; 
     }
 }

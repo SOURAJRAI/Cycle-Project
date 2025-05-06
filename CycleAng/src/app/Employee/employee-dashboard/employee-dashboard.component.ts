@@ -4,6 +4,8 @@ import { InventoryService } from '../../Service/inventory.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from '../../Auth/login/login.component';
+import { LoginService } from '../../Service/loginService/login.service';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -15,18 +17,29 @@ export class EmployeeDashboardComponent {
   combinedOrder: any []=[];
   recentorders: any[] = [];
   Cycles :any [] =[];
+  users :any []=[];
 
 
   constructor(
     private orderService: OrderService,
     private inventoryService: InventoryService,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private user:LoginService
+    
   ) {}
 
   ngOnInit() {
     this.getCombinedData();
+    this.getUser();
     // this.getInventoryData();
     // this.getInventoryTime();
+  }
+
+  getUser(){
+    this.users =this.user.getUser();
+
+    console.log(this.users);
+
   }
 
   getCombinedData() {
@@ -46,7 +59,7 @@ export class EmployeeDashboardComponent {
         });
         // this.recentorders = this.combinedOrder;
         this.getRecentOrders();
-        console.log("order combined",this.combinedOrder);
+        // console.log("order combined",this.combinedOrder);
         // console.log("Recent Orders",this.recentorders);
         
       },
@@ -73,7 +86,7 @@ export class EmployeeDashboardComponent {
       time: this.getTimeAgo(order.orderDate),
       actual: order.orderDate,
     }));
-    console.log("mapped orders",mappedorders);
+    // console.log("mapped orders",mappedorders);
     this.recentorders = mappedorders;
   }
 

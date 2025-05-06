@@ -9,6 +9,7 @@ export class CustomerService {
 
   constructor(private http:HttpClient) { }
   private apiUrl =environment.apiBaseUrl + '/Customer';
+  private apiUrlPhone =environment.apiBaseUrl + '/Customer/by-mobile';
 
 
   getAllCustomers() {
@@ -25,6 +26,11 @@ export class CustomerService {
 
   deleteCustomer(customerId: number) {
     return this.http.delete<any>(`${this.apiUrl}/${customerId}`);
+  }
+
+  getCustomerByPhone(phone:any){
+    return this.http.get<any>(`${this.apiUrlPhone}/${phone}`)
+
   }
 
 

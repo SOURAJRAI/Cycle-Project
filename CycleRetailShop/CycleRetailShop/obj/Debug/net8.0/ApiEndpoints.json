@@ -341,6 +341,28 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CycleRetailShop.Controllers.logfailedAttempts",
+    "Method": "LogFailedPaymentAsync",
+    "RelativePath": "api/logfailedAttempts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "failedattempt",
+        "Type": "CycleRetailShop.Controllers.failedAttempts",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CycleRetailShop.Controllers.OrderController",
     "Method": "GetAllOrders",
     "RelativePath": "api/Order",

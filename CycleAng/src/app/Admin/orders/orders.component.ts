@@ -4,10 +4,11 @@ import { OrderService } from '../../Service/order.service';
 import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../Service/loginService/login.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
-  imports: [CommonModule,DatePipe,FormsModule],
+  imports: [CommonModule,DatePipe,FormsModule,RouterModule],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.scss'
 })
